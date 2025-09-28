@@ -1,0 +1,145 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    width: auto;
+    height: 65px;
+    border-bottom: 1px solid #E6E8EB;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+    height: auto;
+}
+
+.logo-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Newsreader', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #171412;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    flex-grow: 1;
+    height: 40px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    height: 40px;
+}
+
+.nav-link {
+    font-family: 'Newsreader', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #171412;
+    text-decoration: none;
+    height: 21px;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.order-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 121px;
+    min-width: 84px;
+    max-width: 480px;
+    height: 40px;
+    background: #ED8012;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Newsreader', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #171412;
+}
+
+.order-btn:hover {
+    background: #d6720f;
+}
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.team img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.team {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #666;
+    font-family: 'Times New Roman', serif;
+}
