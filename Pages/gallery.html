@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maison du Café</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid whitesmoke;
+        }
+        header img {
+            height: 40px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+        }
+        .order-btn {
+            background-color: indianred;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .gallery {
+            padding: 20px;
+        }
+        .gallery h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .gallery p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            background-color: #ddd;
+        }
+        .pagination {
+            margin: 20px 0;
+        }
+        .pagination span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    ajsbfiab
+    <header>
+        <img src="logo.png" alt="Maison du Café Logo">
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="order-btn">Order Online</button>
+    </header>
+    <section class="gallery">
+        <h1>Gallery</h1>
+        <p>Explore the cozy ambience and delightful moments at Maison du Café</p>
+        <div class="gallery-container">
+            <div class="gallery-item" style="background-image: url('image1.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image2.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image3.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image4.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image5.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image6.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image7.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('image8.jpg');"></div>
+        </div>
+        <div class="pagination">
+            <span>&lt;</span>
+            <span>1</span>
+            <span>2</span>
+            <span>&gt;</span>
+        </div>
+    </section>
 </body>
 </html>
