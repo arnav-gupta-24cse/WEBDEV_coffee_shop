@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 40px;
-    width: 100%;
+    width: auto;
     height: 65px;
     border-bottom: 1px solid #E6E8EB;
 }
