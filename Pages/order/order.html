@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Online - Maison du Café</title>
-    <link rel="stylesheet" href="order page.css">
+    <link rel="stylesheet" href="order.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
@@ -22,8 +22,8 @@
             <nav class="navigation">
                 <a href="#" class="nav-link">Menu</a>
                 <a href="#" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Locations</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="/Pages/contact/contact.html" class="nav-link">Locations</a>
+                <a href="/Pages/contact/contact.html" class="nav-link">Contact</a>
                 <a href="#" class="nav-link">Gallery</a>
             </nav>
         </div>
@@ -34,7 +34,7 @@
 
         <div class="order-tabs">
             <a href="#" class="tab-link active">Order Online</a>
-            <a href="#" class="tab-link">Reserve Table</a>
+            <a href="/Pages/reserve/reserve.html" class="tab-link">Reserve Table</a>
         </div>
 
         <form action="#" method="POST" class="order-form">
@@ -49,69 +49,35 @@
             <section class="order-section">
                 <h2>Select Items</h2>
                 
-                <div class="form-group">
-                    <label for="coffee-select">Coffee ☕️</label>
-                    <select id="coffee-select" name="coffee">
-                        <option selected disabled>-- Select a Coffee --</option>
-                        <option>Latte – ₹240</option>
-                        <option>Espresso – ₹180</option>
-                        <option>Cappuccino – ₹220</option>
-                        <option>Iced Coffee – ₹250</option>
-                        <option>Americano – ₹200</option>
-                        <option>Mocha – ₹280</option>
-                        <option>Cold Brew – ₹270</option>
-                    </select>
+                <div class="menu-category">
+                    <h3>Coffee ☕️</h3>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="latte"> Latte – ₹240</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="espresso"> Espresso – ₹180</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="cappuccino"> Cappuccino – ₹220</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="iced-coffee"> Iced Coffee – ₹250</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="americano"> Americano – ₹200</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="mocha"> Mocha – ₹280</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="cold-brew"> Cold Brew – ₹270</label></div>
                 </div>
 
-                <div class="form-group">
-                    <label for="tea-select">Tea 🍵</label>
-                    <select id="tea-select" name="tea">
-                        <option selected disabled>-- Select a Tea --</option>
-                        <option>Green Tea – ₹160</option>
-                        <option>Black Tea – ₹160</option>
-                        <option>Herbal Tea – ₹180</option>
-                        <option>Chai Latte – ₹210</option>
-                        <option>Masala Chai – ₹150</option>
-                        <option>Iced Tea – ₹200</option>
-                    </select>
+                <div class="menu-category">
+                    <h3>Tea 🍵</h3>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="green-tea"> Green Tea – ₹160</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="black-tea"> Black Tea – ₹160</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="herbal-tea"> Herbal Tea – ₹180</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="chai-latte"> Chai Latte – ₹210</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="masala-chai"> Masala Chai – ₹150</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="iced-tea"> Iced Tea – ₹200</label></div>
                 </div>
 
-                <div class="form-group">
-                    <label for="pastries-select">Pastries 🥐</label>
-                    <select id="pastries-select" name="pastries">
-                        <option selected disabled>-- Select a Pastry --</option>
-                        <option>Croissant – ₹150</option>
-                        <option>Muffin – ₹180</option>
-                        <option>Scone – ₹170</option>
-                        <option>Danish Pastry – ₹190</option>
-                        <option>Banana Bread – ₹160</option>
-                        <option>Chocolate Eclair – ₹220</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="breakfast-select">Breakfast 🍳</label>
-                    <select id="breakfast-select" name="breakfast">
-                        <option selected disabled>-- Select a Breakfast Item --</option>
-                        <option>Avocado Toast – ₹350</option>
-                        <option>Breakfast Sandwich – ₹380</option>
-                        <option>Yogurt Parfait – ₹300</option>
-                        <option>Oatmeal – ₹280</option>
-                        <option>Pancakes – ₹360</option>
-                        <option>Scrambled Eggs on Toast – ₹320</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="seasonal-select">Seasonal Specials ✨</label>
-                    <select id="seasonal-select" name="seasonal">
-                        <option selected disabled>-- Select a Special --</option>
-                        <option>Pumpkin Spice Latte – ₹350</option>
-                        <option>Peppermint Mocha – ₹350</option>
-                        <option>Gingerbread Cookie – ₹150</option>
-                        <option>Eggnog Latte – ₹360</option>
-                        <option>Classic Hot Chocolate – ₹280</option>
-                    </select>
+                <div class="menu-category">
+                    <h3>Pastries 🥐</h3>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="croissant"> Croissant – ₹150</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="muffin"> Muffin – ₹180</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="scone"> Scone – ₹170</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="danish"> Danish Pastry – ₹190</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="banana-bread"> Banana Bread – ₹160</label></div>
+                    <div class="menu-item-checkbox"><label><input type="checkbox" name="items[]" value="eclair"> Chocolate Eclair – ₹220</label></div>
                 </div>
             </section>
 
@@ -167,6 +133,6 @@
             </div>
         </form>
     </main>
-
+    
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table - Maison du Café</title>
+    <link rel="stylesheet" href="reserve.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo-section">
+            <div class="logo-icon">
+                <img src="/Assets/coffee-mug.png" alt="Maison du Café logo">
+            </div>
+            <span class="logo-text">Maison du Café</span>
+        </a>
+        <div class="nav-section">
+            <nav class="navigation">
+                <a href="#" class="nav-link">Menu</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="/Pages/contact/contact.html" class="nav-link">Locations</a>
+                <a href="/Pages/contact/contact.html" class="nav-link">Contact</a>
+                <a href="#" class="nav-link">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Reserve a Table</h1>
+
+        <div class="order-tabs">
+            <a href="/Pages/contact/contact.html" class="tab-link">Order Online</a>
+            <a href="/Pages/reserve/reserve.html" class="tab-link active">Reserve Table</a>
+        </div>
+
+        <form action="#" method="POST" class="reservation-form">
+            <div class="form-group">
+                <label for="guests-select">Select Number of guests</label>
+                <select id="guests-select" name="guests">
+                    <option>1 Guest</option>
+                    <option >2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                    <option>5 Guests</option>
+                    <option>6 Guests</option>
+                    <option>6+ Guests</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="time-select">Time Slot</label>
+                <select id="time-select" name="time">
+                    <option>09:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option selected>12:00 PM</option>
+                    <option>01:00 PM</option>
+                    <option>02:00 PM</option>
+                    <option>03:00 PM</option>
+                    <option>04:00 PM</option>
+                    <option>05:00 PM</option>
+                    <option>06:00 PM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
+            </div>
+
+            <img src="/Assets/location.jpeg" alt="Map showing location of Maison du Café" class="map-image">
+            
+            <div class="form-footer">
+                <button type="submit" class="order-btn">Place Reservation</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

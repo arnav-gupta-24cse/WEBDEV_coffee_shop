@@ -301,3 +301,36 @@ section {
     text-align: right;
     margin-top: 20px;
 }
+
+.menu-category {
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.menu-category h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.menu-item-checkbox {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.menu-item-checkbox label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-item-checkbox input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
