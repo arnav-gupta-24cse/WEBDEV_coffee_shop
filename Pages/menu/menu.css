@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +14,6 @@ body {
     min-height: 800px;
 }
 
-/* Header Styles */
 .header {
     display: flex;
     flex-direction: row;
@@ -116,7 +114,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Main Content */
 .main-content {
     padding: 40px;
 }
@@ -169,7 +166,6 @@ body {
     border-radius: 4px;
 }
 
-/* Coffee Items */
 #latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
 #espresso .menu-item-img { background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d'); }
 #cappuccino .menu-item-img { background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a'); }
@@ -178,7 +174,6 @@ body {
 #mocha .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
 #cold-brew .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
 
-/* Tea Items */
 #green-tea .menu-item-img { background-image: url('https://imgs.search.brave.com/_Nxg_NEhD5J6mqlivJCROYbVCMbZ5NaomSb9SnxX-jg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9nbGFzcy1jdXAt/Z3JlZW4tdGVhLWlz/b2xhdGVkXzU1ODgz/LTc5ODMuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw'); }
 #black-tea .menu-item-img { background-image: url('https://imgs.search.brave.com/ZNwLnYfAJYJb3LRSDmtYDhND6jMU7sLChpaGngF8398/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcnRm/dWx0ZWEuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL0JDXzJCLV8y/QkRhcmplZWxpbmdf/MkJfMjhjdXBfMjlf/MkIwOTMyLmpwZz92/PTE3NTExMzc0NzYm/d2lkdGg9NTMz'); }
 #herbal-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
@@ -186,7 +181,6 @@ body {
 #masala-chai .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
 #iced-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
 
-/* Pastries */
 #croissant .menu-item-img { background-image: url('https://imgs.search.brave.com/MrLz_BlaSgJt3JUrlpyEJTHMGNL_3vVj8wfCfQKLMHU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWct/Z2xvYmFsLmNwY2Ru/LmNvbS9yZWNpcGVz/L2FkNWZiNjZjYmQ4/M2I5ZWIvMzAweDIy/MGNxODAvY3JvaXNz/YW50LXB1ZmYtcGFz/dHJ5LWNlcGF0LWRh/bi1tdWRhaC1mb3Rv/LXJlc2VwLXV0YW1h/LmpwZw'); }
 #muffin .menu-item-img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
 #scone .menu-item-img { background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f'); }
@@ -194,13 +188,11 @@ body {
 #banana-bread .menu-item-img { background-image: url('https://imgs.search.brave.com/Yh4lxbX990B794EPgCkUujkxEC0XX8QvGzRbYIBAeG4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iYW5h/bmEtYnJlYWQtaG9t/ZW1hZGUtZnJlc2gt/ZnJ1aXQtOTM1Njg3/NTUuanBn'); }
 #chocolate-eclair .menu-item-img { background-image: url('https://imgs.search.brave.com/td3EcsPWcFZqGHUcJdOLr6RAxHSkpwsSCOay0CKvoCQ/rs:fit:500:0:1:0/g:ce/aHR0cDovL2Rldmls/c2Zvb2RraXRjaGVu/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNy8wMS9DSE9D/T0xBVEVfRUNMQUlS/XzI1X1dFQi5qcGc'); }
 
-/* Breakfast */
 #avocado-toast .menu-item-img { background-image: url('https://imgs.search.brave.com/jVZ854Mr8cHSnTppJnMiMCc0ASa_sYFgdt_wajRHbsw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGhlc3BydWNlZWF0/cy5jb20vdGhtYi84/aGk0VnJJRVNmWDMt/RW9WVTFDT3pOcUJT/T0U9LzE1MDB4MC9m/aWx0ZXJzOm5vX3Vw/c2NhbGUoKTptYXhf/Ynl0ZXMoMTUwMDAw/KTpzdHJpcF9pY2Mo/KS9hdm9jYWRvLXRv/YXN0LTQxNzQyNDQt/c3RlcC0wNS1kNDg0/YjYxNTAxODc0Yjhk/YTEwMDI0Y2Q4NTgz/YjA4Ny5qcGc'); }
 #breakfast-sandwich .menu-item-img { background-image: url('https://imgs.search.brave.com/e7noUnIDNUETZakYJLhGoYiYazGp2IfXB6kqCWh27C0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzA0LzI4LzIz/LzM2MF9GXzEwNDI4/MjMyMV9YZ3BueUNm/RjFsWnhkbHRvWVJo/eHJ3TXJKWEpvando/Ny5qcGc'); }
 #yogurt-parfait .menu-item-img { background-image: url('https://imgs.search.brave.com/ELXyRQUhawuupOnPCS7aaMhiPQtT3xpjLH7SCB42_2o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mb29k/LnVubC5lZHUvc2l0/ZXMvdW5sLmVkdS5p/YW5yLmV4dGVuc2lv/bi5mb29kL2ZpbGVz/L3N0eWxlcy9ub19j/cm9wXzk2MC9wdWJs/aWMvbWVkaWEvaW1h/Z2UveW9ndXJ0LXBh/cmZhaXQtcmVjaXBl/LmpwZz9pdG9rPWk2/TTFhOVNF'); }
 #oatmeal .menu-item-img { background-image: url('https://imgs.search.brave.com/93ekH9hi7zamW01gXGYWpUdsgGf3Zee9nAKTQVemrBU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9vYXRt/ZWFsLTE1NzkxMjEy/LmpwZw'); }
 
-/* Seasonal Specials */
 #pumpkin-spice-latte .menu-item-img { background-image: url('https://imgs.search.brave.com/ZoXR3csxgXQe5uGxxYV-MSPOMaWNZelo1N4Wl_1Bsts/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YW1iaXRpb3Vza2l0/Y2hlbi5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDkv/UHVtcGtpbi1TcGlj/ZS1MYXR0ZS0zLmpw/Zw'); }
 #peppermint-mocha .menu-item-img { background-image: url('https://imgs.search.brave.com/kt5JawS0326hvsd2WHOOE39-8soQ1H1G4B1bYYjiN_o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWluZHlzY29va2lu/Z29ic2Vzc2lvbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjMvMDkvRWFzeS1I/b21lbWFkZS1TdGFy/YnVja3MtUGVwcGVy/bWludC1Nb2NoYS1D/b2ZmZWUtUmVjaXBl/LTMtNjgzeDEwMjQu/anBn'); }
 #gingerbread-cookie .menu-item-img { background-image: url('https://imgs.search.brave.com/Mkefft513KNhaz8Ov7Ck3JksJZ_bUgitRpk7LMygpr0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2F2b3J5bm90aGlu/Z3MuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE0LzExL2dp/bmdlcmJyZWFkLWNv/b2tpZXMtaW1hZ2Ut/Ni5qcGc'); }
