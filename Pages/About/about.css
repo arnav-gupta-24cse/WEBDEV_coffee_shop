@@ -105,10 +105,13 @@ body {
     line-height: 21px;
     text-align: center;
     color: #171412;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .order-btn:hover {
     background: #d6720f;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .content {
