@@ -153,11 +153,51 @@ body {
     text-align: left;
 }
 
-.menu-item img {
-    width: 40px;
-    height: 40px;
+.menu-item-img {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
     margin-bottom: 15px;
+    border-radius: 4px;
 }
+
+/* Coffee Items */
+#latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
+#espresso .menu-item-img { background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d'); }
+#cappuccino .menu-item-img { background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a'); }
+#iced-coffee .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+#americano .menu-item-img { background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd'); }
+#mocha .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
+#cold-brew .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+
+/* Tea Items */
+#green-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1555217851-6141535bd771'); }
+#black-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4'); }
+#herbal-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
+#chai-latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3'); }
+#masala-chai .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+#iced-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
+
+/* Pastries */
+#croissant .menu-item-img { background-image: url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071'); }
+#muffin .menu-item-img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
+#scone .menu-item-img { background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f'); }
+#danish-pastry .menu-item-img { background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35'); }
+#banana-bread .menu-item-img { background-image: url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071'); }
+#chocolate-eclair .menu-item-img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
+
+/* Breakfast */
+#avocado-toast .menu-item-img { background-image: url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81'); }
+#breakfast-sandwich .menu-item-img { background-image: url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445'); }
+#yogurt-parfait .menu-item-img { background-image: url('https://images.unsplash.com/photo-1568254183919-78a4f43a2877'); }
+#oatmeal .menu-item-img { background-image: url('https://images.unsplash.com/photo-1549007953-2f2dc0b24019'); }
+
+/* Seasonal Specials */
+#pumpkin-spice-latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b'); }
+#peppermint-mocha .menu-item-img { background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587'); }
+#gingerbread-cookie .menu-item-img { background-image: url('https://images.unsplash.com/photo-1545665225-b23b99e4d45e'); }
+#eggnog-latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c'); }
 
 .menu-item h3 {
     font-size: 20px;
