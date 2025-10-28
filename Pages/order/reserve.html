@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserve a Table - Maison du Café</title>
-    <link rel="stylesheet" href="reserve.css">
+    <!-- Link to its own CSS file -->
+    <link rel="stylesheet" href="reserve.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <style>
+        /* Basic style for the confirmation message */
+        #confirmation-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #dff0d8; /* Light green */
+            color: #3c763d; /* Dark green text */
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+    </style>
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo-section">
+         <!-- Make sure paths are correct relative to reserve.html -->
+        <a href="../home/home.html" class="logo-section">
             <div class="logo-icon">
-                <img src="/Assets/coffee-mug.png" alt="Maison du Café logo">
+                <img src="../../Assets/coffee-mug.png" alt="Maison du Café logo">
             </div>
-            <span class="logo-text">Maison du Café</span>
+            <h1 class="logo-text">Maison du Café</h1>
         </a>
         <div class="nav-section">
             <nav class="navigation">
-                <a href="/Pages/menu/menu.html" class="nav-link">Menu</a>
-                <a href="/Pages/About/about.html" class="nav-link">About</a>
-                <a href="/Pages/contact/contact.html" class="nav-link">Locations</a>
-                <a href="/Pages/contact/contact.html" class="nav-link">Contact</a>
-                <a href="#" class="nav-link">Gallery</a>
+                <a href="../menu/menu.html" class="nav-link">Menu</a>
+                <a href="../About/about.html" class="nav-link">About</a>
+                <a href="reserve.html" class="nav-link">Locations</a> <!-- Assuming reserve doubles as locations -->
+                <a href="../contact/contact.html" class="nav-link">Contact</a>
+                <a href="../Gallery/gallery.html" class="nav-link">Gallery</a>
+                <a href="../cart/cart.html" class="nav-link">Cart</a>
             </nav>
+            <a href="../cart/cart.html" class="order-btn">View Cart</a>
         </div>
     </header>
 
@@ -33,16 +50,17 @@
         <h1>Reserve a Table</h1>
 
         <div class="order-tabs">
-            <a href="/Pages/order/order.html" class="tab-link">Order Online</a>
-            <a href="/Pages/reserve/reserve.html" class="tab-link active">Reserve Table</a>
+            <a href="../order/order.html" class="tab-link">Order Online</a> <!-- Link to order page -->
+            <a href="reserve.html" class="tab-link active">Reserve Table</a>
         </div>
 
-        <form action="#" method="POST" class="reservation-form">
+        <!-- Add an ID to the form for easier selection in JS -->
+        <form id="reservationForm" action="#" method="POST" class="reservation-form">
             <div class="form-group">
                 <label for="guests-select">Select Number of guests</label>
                 <select id="guests-select" name="guests">
                     <option>1 Guest</option>
-                    <option >2 Guests</option>
+                    <option selected>2 Guests</option>
                     <option>3 Guests</option>
                     <option>4 Guests</option>
                     <option>5 Guests</option>
@@ -69,7 +87,7 @@
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required> <!-- Added required -->
             </div>
 
             <div class="form-group">
@@ -77,8 +95,11 @@
                 <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
             </div>
 
-            <img src="/Assets/location.jpeg" alt="Map showing location of Maison du Café" class="map-image">
+            <img src="../../Assets/location.jpeg" alt="Map showing location of Maison du Café" class="map-image"> <!-- Corrected Path -->
             
+            <!-- Confirmation Message Area -->
+            <div id="confirmation-message"></div>
+
             <div class="form-footer">
                 <button type="submit" class="order-btn">Place Reservation</button>
             </div>
@@ -86,13 +107,102 @@
     </main>
     <footer>
         <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+             <!-- Corrected Paths -->
+            <a href="../home/home.html">Home</a>
+            <a href="../About/about.html">About</a>
+            <a href="../contact/contact.html">Contact</a>
         </div>
         <div class="footer-copyright">
             &copy; 2025 Maison du Café. All rights reserved.
         </div>
     </footer>
-</body>
-</html>
+
+    <!-- Embedded JavaScript for Reservation Form -->
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('reservationForm');
+        const confirmationMessageEl = document.getElementById('confirmation-message');
+        
+        // !!! PASTE YOUR WEB APP URL FROM GOOGLE APPS SCRIPT HERE !!!
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMO51w7403ymuo6egDTAWLcKAmmLwFSpWERxLaQ2xSsZZbsrL6h2OB_k3hAQ8cklwPqQ/exec"; 
+
+        // --- (Your cart functions remain unchanged) ---
+        function getCart() {
+            const cartData = JSON.parse(localStorage.getItem('cafeCart')) || [];
+            return cartData.map(item => ({ ...item, price: parseFloat(item.price) }));
+        }
+
+        function updateCartLink() {
+             try {
+                const potentialPaths = ['../cart/cart.html', 'cart.html', 'Pages/cart/cart.html', '../../Pages/cart/cart.html'];
+                let cartLink = null;
+                for (const path of potentialPaths) {
+                    cartLink = document.querySelector(`nav.navigation a[href$="${path}"]`);
+                    if (cartLink) break; 
+                }
+                
+                if (cartLink) {
+                    const cart = getCart();
+                    const itemCount = cart.length;
+                    cartLink.textContent = `Cart ${itemCount > 0 ? `(${itemCount})` : ''}`;
+                } else {
+                    console.warn("Cart link not found in header for count update.");
+                }
+            } catch (error) {
+                console.error("Error updating cart link:", error);
+            }
+        }
+        // --- End of cart count functions ---
+
+
+        form.addEventListener('submit', function(event) {
+            // 1. Prevent the default form submission
+            event.preventDefault(); 
+            
+            // 2. Show a 'sending' message
+            confirmationMessageEl.textContent = 'Submitting reservation...';
+            confirmationMessageEl.style.display = 'block';
+            confirmationMessageEl.style.backgroundColor = '#fefde2'; // Yellowish
+            confirmationMessageEl.style.color = '#666';
+
+            // 3. Create a FormData object from the form
+            const formData = new FormData(form);
+
+            // 4. Send the data to your Google Script URL using fetch()
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Parse the JSON response from the script
+            .then(data => {
+                console.log("Response from script:", data); // For debugging
+                
+                if (data.result === 'success') {
+                    // 5. Display the SUCCESS confirmation message
+                    const guests = formData.get('guests'); // Get values for the message
+                    const time = formData.get('time');
+                    const email = formData.get('email');
+                    
+                    confirmationMessageEl.textContent = `Thank you! Your reservation  is confirmed.`;
+                    confirmationMessageEl.style.backgroundColor = '#dff0d8';
+                    confirmationMessageEl.style.color = '#3c763d';
+                    
+                    form.reset(); // Clear the form
+                } else {
+                    // 5b. Display an ERROR message
+                    throw new Error(data.message || 'Unknown error occurred');
+                }
+            })
+            .catch(error => {
+                // 5c. Handle network or script errors
+                console.error('Error submitting form:', error);
+                confirmationMessageEl.textContent = 'Oops! Something went wrong. Please try again. ' + error.message;
+                confirmationMessageEl.style.backgroundColor = '#f2dede'; // Error color
+                confirmationMessageEl.style.color = '#a94442';
+            });
+        });
+
+        // Update cart count in header on page load
+        updateCartLink();
+    });
+    </script>
