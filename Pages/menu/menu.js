@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 document.addEventListener('DOMContentLoaded', function () {
+=======
+
+document.addEventListener('DOMContentLoaded', function () {
+
+>>>>>>> Stashed changes
   fetch('menu.json')
     .then(res => res.json())
     .then(data => {
@@ -12,6 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   document.addEventListener('click', function (e) {
     if (!e.target.classList.contains('qbtn')) return;
     const input = e.target.parentElement.querySelector('.qin');
@@ -22,6 +32,19 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCart();
   });
 
+<<<<<<< Updated upstream
+=======
+
+  document.addEventListener('input', function (e) {
+    if (!e.target.classList.contains('qin')) return;
+    let v = parseInt(e.target.value, 10) || 0;
+    if (v < 0) v = 0;
+    e.target.value = v;
+    updateCart();
+  });
+
+
+>>>>>>> Stashed changes
   const clearBtn = document.getElementById('cartClear');
   if (clearBtn) {
     clearBtn.addEventListener('click', function () {
@@ -29,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       updateCart();
     });
   }
+<<<<<<< Updated upstream
 
   const payBtn = document.querySelector('.cart .pay');
   if (payBtn) {
@@ -39,6 +63,26 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCart() {
     let totalItems = 0;
     let totalPrice = 0;
+=======
+  
+
+  const payBtn = document.querySelector('.cart .pay');
+  if (payBtn) {
+    payBtn.addEventListener('click', function() {
+
+
+
+      window.location.href = '../cart/cart.html'; 
+    });
+  }
+
+
+  function updateCart() {
+    let totalItems = 0;
+    let totalPrice = 0;
+    
+
+>>>>>>> Stashed changes
     let cartItems = [];
 
     document.querySelectorAll('.item').forEach(card => {
@@ -49,6 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
       totalItems += qty;
       totalPrice += qty * price;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
       if (qty > 0) {
         const id = card.dataset.id;
         const name = card.querySelector('.row strong').textContent;
@@ -56,11 +104,20 @@ document.addEventListener('DOMContentLoaded', function () {
           id: id,
           name: name,
           price: price,
+<<<<<<< Updated upstream
           priceDisplay: priceString, 
+=======
+          priceDisplay: priceString,
+>>>>>>> Stashed changes
           quantity: qty
         });
       }
     });
+<<<<<<< Updated upstream
+=======
+    
+
+>>>>>>> Stashed changes
 
     localStorage.setItem('maisonDuCafeCart', JSON.stringify(cartItems));
 
