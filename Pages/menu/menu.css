@@ -1,19 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Newsreader', serif;
-    background: #FFFFFF;
-    color: #171412;
-    line-height: 1.5;
-    width: auto;
-    margin: 0 auto;
-    min-height: 800px;
-}
-
+/* Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, Arial, sans-serif; color: #222; background: #fff; }
 .header {
     display: flex;
     flex-direction: row;
@@ -32,6 +19,15 @@ body {
     gap: 12px;
     min-width: 200px;
     height: auto;
+}
+
+.logo-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
 }
 
 .logo-icon img {
@@ -105,131 +101,139 @@ body {
     line-height: 21px;
     text-align: center;
     color: #171412;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .order-btn:hover {
     background: #d6720f;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+main { padding: 16px; }
+h2 { margin: 12px 0 6px; font-size: 24px; }
+.sub { color:#666; margin-bottom: 10px; font-size: 14px; }
+h3 { margin: 16px 0 10px; font-size: 18px; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+
+/* Cards (smaller & warm) */
+.item {
+  position: relative;
+  border: 1px solid #ed8012;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff8f2;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  z-index: 1; /* ensure card sits above grid background */
 }
 
-.main-content {
-    padding: 40px;
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fff3e0;
+  z-index: 100; /* bring card and its dropdown to the top */
 }
 
-.menu-title {
-    font-size: 48px;
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 10px;
+/* Hover dropdown (JSON description) */
+.item .drop {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 100%;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999; /* keep it above all items */
+  font-size: 13px;
+  color: #4a2b09;
+  line-height: 1.4;
 }
 
-.menu-description {
-    font-size: 18px;
-    color: #555;
-    text-align: left;
-    margin-bottom: 40px;
+.item:hover .drop {
+  display: block;
 }
 
-.category {
-    margin-bottom: 40px;
+
+.img { height: 110px; border-radius: 8px; background: #f4f4f4 center/cover no-repeat; margin-bottom: 8px; }
+
+.row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.row strong { font-size: 15px; font-weight: 600; color: #4a2b09; }
+.price { font-size: 13px; background:#fff1d6; border:1px solid #f0d39a; padding: 2px 6px; border-radius:999px; font-weight:500; color:#3b220a; }
+
+/* Quantity controls (compact) */
+.qty { display: inline-flex; gap: 6px; align-items: center; }
+.qbtn { width: 28px; height: 28px; border:1px solid #ddd; background:#fff; border-radius:8px; cursor:pointer; font-size:16px; }
+.qin  { width: 46px; height: 28px; text-align:center; border:1px solid #ddd; border-radius:8px; font-size:14px; -moz-appearance: textfield; }
+.qin::-webkit-outer-spin-button, .qin::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Hover dropdown (JSON) */
+.item .drop {
+  position: absolute; left: 10px; right: 10px; top: 100%; margin-top: 6px;
+  background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12); display: none; z-index: 50;
+  font-size: 13px; color:#4a2b09; line-height: 1.4;
 }
+.item:hover .drop { display: block; }
 
-.category-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-align: left;
+/* Bottom Popup Cart */
+.cart {
+  position: fixed; bottom: 16px; left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  width: 92%; max-width: 650px;
+  background: linear-gradient(135deg, #ff914d, #ed8012);
+  color: #fff; border-radius: 14px; padding: 12px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  transition: transform .3s ease, opacity .3s ease; opacity: 0;
+  z-index: 1000; font-size: 14px;
 }
+.cart--show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.cart-left { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.cart-right { display: flex; gap: 8px; }
+.cart .clear, .cart .pay {
+  background: #fff; color:#111; border: none; border-radius: 8px;
+  padding: 8px 12px; cursor: pointer; font-weight: 700;
+  transition: background .2s ease, transform .2s ease;
 }
+.cart .clear { color:#ed8012; font-weight: 600; }
+.cart .clear:hover { background:#ffe6c7; transform: translateY(-2px); }
+.cart .pay:hover { background:#f7f7f7; transform: translateY(-2px); }
 
-.menu-item {
-    background: #fff;
-    border: 1px solid #E6E8EB;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: left;
-}
+/* Footer */
+.foot { text-align:center; padding: 18px; border-top:1px solid #eee; margin-top: 28px; color:#666; font-size: 13px; }
 
-.menu-item-img {
-    width: 100%;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
+/* Item images (swap if you prefer) */
+#latte .img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
+#espresso .img { background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d'); }
+#cappuccino .img { background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a'); }
+#iced-coffee .img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+#americano .img { background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd'); }
+#mocha .img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
+#cold-brew .img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
 
-#latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
-#espresso .menu-item-img { background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d'); }
-#cappuccino .menu-item-img { background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a'); }
-#iced-coffee .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
-#americano .menu-item-img { background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd'); }
-#mocha .menu-item-img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
-#cold-brew .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+#green-tea .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
+#black-tea .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
+#herbal-tea .img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
+#chai-latte .img { background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3'); }
+#masala-chai .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
+#iced-tea .img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
 
-#green-tea .menu-item-img { background-image: url('https://imgs.search.brave.com/_Nxg_NEhD5J6mqlivJCROYbVCMbZ5NaomSb9SnxX-jg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9nbGFzcy1jdXAt/Z3JlZW4tdGVhLWlz/b2xhdGVkXzU1ODgz/LTc5ODMuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw'); }
-#black-tea .menu-item-img { background-image: url('https://imgs.search.brave.com/ZNwLnYfAJYJb3LRSDmtYDhND6jMU7sLChpaGngF8398/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcnRm/dWx0ZWEuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL0JDXzJCLV8y/QkRhcmplZWxpbmdf/MkJfMjhjdXBfMjlf/MkIwOTMyLmpwZz92/PTE3NTExMzc0NzYm/d2lkdGg9NTMz'); }
-#herbal-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
-#chai-latte .menu-item-img { background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3'); }
-#masala-chai .menu-item-img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
-#iced-tea .menu-item-img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
+#croissant .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
+#muffin .img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
+#scone .img { background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f'); }
+#danish-pastry .img { background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35'); }
+#banana-bread .img { background-image: url('https://images.unsplash.com/photo-1609766857041-1f7b4f9a7df6'); }
+#chocolate-eclair .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
 
-#croissant .menu-item-img { background-image: url('https://imgs.search.brave.com/MrLz_BlaSgJt3JUrlpyEJTHMGNL_3vVj8wfCfQKLMHU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWct/Z2xvYmFsLmNwY2Ru/LmNvbS9yZWNpcGVz/L2FkNWZiNjZjYmQ4/M2I5ZWIvMzAweDIy/MGNxODAvY3JvaXNz/YW50LXB1ZmYtcGFz/dHJ5LWNlcGF0LWRh/bi1tdWRhaC1mb3Rv/LXJlc2VwLXV0YW1h/LmpwZw'); }
-#muffin .menu-item-img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
-#scone .menu-item-img { background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f'); }
-#danish-pastry .menu-item-img { background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35'); }
-#banana-bread .menu-item-img { background-image: url('https://imgs.search.brave.com/Yh4lxbX990B794EPgCkUujkxEC0XX8QvGzRbYIBAeG4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iYW5h/bmEtYnJlYWQtaG9t/ZW1hZGUtZnJlc2gt/ZnJ1aXQtOTM1Njg3/NTUuanBn'); }
-#chocolate-eclair .menu-item-img { background-image: url('https://imgs.search.brave.com/td3EcsPWcFZqGHUcJdOLr6RAxHSkpwsSCOay0CKvoCQ/rs:fit:500:0:1:0/g:ce/aHR0cDovL2Rldmls/c2Zvb2RraXRjaGVu/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNy8wMS9DSE9D/T0xBVEVfRUNMQUlS/XzI1X1dFQi5qcGc'); }
+#avocado-toast .img { background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141'); }
+#breakfast-sandwich .img { background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349'); }
+#yogurt-parfait .img { background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141'); }
+#oatmeal .img { background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60'); }
 
-#avocado-toast .menu-item-img { background-image: url('https://imgs.search.brave.com/jVZ854Mr8cHSnTppJnMiMCc0ASa_sYFgdt_wajRHbsw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGhlc3BydWNlZWF0/cy5jb20vdGhtYi84/aGk0VnJJRVNmWDMt/RW9WVTFDT3pOcUJT/T0U9LzE1MDB4MC9m/aWx0ZXJzOm5vX3Vw/c2NhbGUoKTptYXhf/Ynl0ZXMoMTUwMDAw/KTpzdHJpcF9pY2Mo/KS9hdm9jYWRvLXRv/YXN0LTQxNzQyNDQt/c3RlcC0wNS1kNDg0/YjYxNTAxODc0Yjhk/YTEwMDI0Y2Q4NTgz/YjA4Ny5qcGc'); }
-#breakfast-sandwich .menu-item-img { background-image: url('https://imgs.search.brave.com/e7noUnIDNUETZakYJLhGoYiYazGp2IfXB6kqCWh27C0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzA0LzI4LzIz/LzM2MF9GXzEwNDI4/MjMyMV9YZ3BueUNm/RjFsWnhkbHRvWVJo/eHJ3TXJKWEpvando/Ny5qcGc'); }
-#yogurt-parfait .menu-item-img { background-image: url('https://imgs.search.brave.com/ELXyRQUhawuupOnPCS7aaMhiPQtT3xpjLH7SCB42_2o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mb29k/LnVubC5lZHUvc2l0/ZXMvdW5sLmVkdS5p/YW5yLmV4dGVuc2lv/bi5mb29kL2ZpbGVz/L3N0eWxlcy9ub19j/cm9wXzk2MC9wdWJs/aWMvbWVkaWEvaW1h/Z2UveW9ndXJ0LXBh/cmZhaXQtcmVjaXBl/LmpwZz9pdG9rPWk2/TTFhOVNF'); }
-#oatmeal .menu-item-img { background-image: url('https://imgs.search.brave.com/93ekH9hi7zamW01gXGYWpUdsgGf3Zee9nAKTQVemrBU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9vYXRt/ZWFsLTE1NzkxMjEy/LmpwZw'); }
-
-#pumpkin-spice-latte .menu-item-img { background-image: url('https://imgs.search.brave.com/ZoXR3csxgXQe5uGxxYV-MSPOMaWNZelo1N4Wl_1Bsts/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YW1iaXRpb3Vza2l0/Y2hlbi5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDkv/UHVtcGtpbi1TcGlj/ZS1MYXR0ZS0zLmpw/Zw'); }
-#peppermint-mocha .menu-item-img { background-image: url('https://imgs.search.brave.com/kt5JawS0326hvsd2WHOOE39-8soQ1H1G4B1bYYjiN_o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWluZHlzY29va2lu/Z29ic2Vzc2lvbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjMvMDkvRWFzeS1I/b21lbWFkZS1TdGFy/YnVja3MtUGVwcGVy/bWludC1Nb2NoYS1D/b2ZmZWUtUmVjaXBl/LTMtNjgzeDEwMjQu/anBn'); }
-#gingerbread-cookie .menu-item-img { background-image: url('https://imgs.search.brave.com/Mkefft513KNhaz8Ov7Ck3JksJZ_bUgitRpk7LMygpr0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2F2b3J5bm90aGlu/Z3MuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE0LzExL2dp/bmdlcmJyZWFkLWNv/b2tpZXMtaW1hZ2Ut/Ni5qcGc'); }
-#eggnog-latte .menu-item-img { background-image: url('https://imgs.search.brave.com/3DIj13PBqsXHvDC1IdIx4Eav5zAHkHvPJyzIa4KrC4Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9icnVu/Y2hhbmRiYXR0ZXIu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzExL2NoYWkt/ZWdnbm9nLWxhdHRl/LXByb2Nlc3MtOS5q/cGc'); }
-
-.menu-item h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.menu-item p {
-    font-size: 16px;
-    color: #555;
-}
-footer {
-    width: 100%;
-    background-color: #2c2c2c;
-    color: #ffffff;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    color: #00aaff;
-}
-
-.footer-copyright {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #bbbbbb;
-}
+#pumpkin-spice-latte .img { background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0'); }
+#peppermint-mocha .img { background-image: url('https://images.unsplash.com/photo-1517705008128-361805f42e86'); }
+#gingerbread-cookie .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
+#eggnog-latte .img { background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0'); }

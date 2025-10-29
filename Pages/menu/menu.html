@@ -1,217 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Maison du Café</title>
-    <link rel="stylesheet" href="menu.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu - Maison du Café</title>
+  <link rel="stylesheet" href="menu.css" />
 </head>
 <body>
-    <header class="header">
+  <header class="header">
         <div class="logo-section">
             <div class="logo-icon">
                 <img src="../../Assets/coffee-mug.png" alt="Coffee Mug Logo" width="24" height="24">
             </div>
             <h1 class="logo-text">Maison du Café</h1>
         </div>
-        
         <div class="nav-section">
             <nav class="navigation">
                 <a href="../home/home.html" class="nav-link">Home</a>
+                <a href="../menu/menu.html" class="nav-link">Menu</a>
                 <a href="../About/about.html" class="nav-link">About</a>
                 <a href="../order/reserve.html" class="nav-link">Locations</a>
-                <a href="../Gallery/gallery.html" class="nav-link">Gallery</a>
                 <a href="../contact/contact.html" class="nav-link">Contact</a>
             </nav>
             <a href="../order/order.html" class="order-btn">Order Online</a>
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="content-container">
-            <section class="menu-section">
-                <h1 class="menu-title">Menu</h1>
-                <p class="menu-description">Explore our selection of handcrafted beverages and delicious bites.</p>
+  <main>
+    <h2>Menu</h2>
+    <p class="sub">Explore our selection of handcrafted beverages and delicious bites.</p>
 
-                <div class="category">
-                    <h2 class="category-title">Coffee</h2>
-                    <div class="menu-grid">
-                        <div class="menu-item" id="latte">
-                            <div class="menu-item-img"></div>
-                            <h3>Latte</h3>
-                            <p>Creamy espresso with steamed milk</p>
-                        </div>
-                        <div class="menu-item" id="espresso">
-                            <div class="menu-item-img"></div>
-                            <h3>Espresso</h3>
-                            <p>Strong, concentrated coffee</p>
-                        </div>
-                        <div class="menu-item" id="cappuccino">
-                            <div class="menu-item-img"></div>
-                            <h3>Cappuccino</h3>
-                            <p>Espresso with foamed milk</p>
-                        </div>
-                        <div class="menu-item" id="iced-coffee">
-                            <div class="menu-item-img"></div>
-                            <h3>Iced Coffee</h3>
-                            <p>Chilled coffee over ice</p>
-                        </div>
-                        <div class="menu-item" id="americano">
-                            <div class="menu-item-img"></div>
-                            <h3>Americano</h3>
-                            <p>Espresso shots with hot water</p>
-                        </div>
-                        <div class="menu-item" id="mocha">
-                            <div class="menu-item-img"></div>
-                            <h3>Mocha</h3>
-                            <p>Chocolate-flavored caffè latte</p>
-                        </div>
-                        <div class="menu-item" id="cold-brew">
-                            <div class="menu-item-img"></div>
-                            <h3>Cold Brew</h3>
-                            <p>Smooth, low-acid coffee</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2 class="category-title">Tea</h2>
-                    <div class="menu-grid">
-                        <div class="menu-item" id="green-tea">
-                            <div class="menu-item-img"></div>
-                            <h3>Green Tea</h3>
-                            <p>Refreshing and light</p>
-                        </div>
-                        <div class="menu-item" id="black-tea">
-                            <div class="menu-item-img"></div>
-                            <h3>Black Tea</h3>
-                            <p>Bold and robust</p>
-                        </div>
-                        <div class="menu-item" id="herbal-tea">
-                            <div class="menu-item-img"></div>
-                            <h3>Herbal Tea</h3>
-                            <p>Caffeine-free infusions</p>
-                        </div>
-                        <div class="menu-item" id="chai-latte">
-                            <div class="menu-item-img"></div>
-                            <h3>Chai Latte</h3>
-                            <p>Spiced tea with milk</p>
-                        </div>
-                        <div class="menu-item" id="masala-chai">
-                            <div class="menu-item-img"></div>
-                            <h3>Masala Chai</h3>
-                            <p>Indian spiced tea</p>
-                        </div>
-                        <div class="menu-item" id="iced-tea">
-                            <div class="menu-item-img"></div>
-                            <h3>Iced Tea</h3>
-                            <p>Chilled tea, sweetened or unsweetened</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2 class="category-title">Pastries</h2>
-                    <div class="menu-grid">
-                        <div class="menu-item" id="croissant">
-                            <div class="menu-item-img"></div>
-                            <h3>Croissant</h3>
-                            <p>Flaky and buttery</p>
-                        </div>
-                        <div class="menu-item" id="muffin">
-                            <div class="menu-item-img"></div>
-                            <h3>Muffin</h3>
-                            <p>Sweet and moist</p>
-                        </div>
-                        <div class="menu-item" id="scone">
-                            <div class="menu-item-img"></div>
-                            <h3>Scone</h3>
-                            <p>Crumbly and rich</p>
-                        </div>
-                        <div class="menu-item" id="danish-pastry">
-                            <div class="menu-item-img"></div>
-                            <h3>Danish Pastry</h3>
-                            <p>Filled and layered</p>
-                        </div>
-                        <div class="menu-item" id="banana-bread">
-                            <div class="menu-item-img"></div>
-                            <h3>Banana Bread</h3>
-                            <p>Moist and sweet</p>
-                        </div>
-                        <div class="menu-item" id="chocolate-eclair">
-                            <div class="menu-item-img"></div>
-                            <h3>Chocolate Eclair</h3>
-                            <p>Cream-filled pastry with chocolate icing</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2 class="category-title">Breakfast</h2>
-                    <div class="menu-grid">
-                        <div class="menu-item" id="avocado-toast">
-                            <div class="menu-item-img"></div>
-                            <h3>Avocado Toast</h3>
-                            <p>Toasted bread with avocado</p>
-                        </div>
-                        <div class="menu-item" id="breakfast-sandwich">
-                            <div class="menu-item-img"></div>
-                            <h3>Breakfast Sandwich</h3>
-                            <p>Eggs, cheese, and meat</p>
-                        </div>
-                        <div class="menu-item" id="yogurt-parfait">
-                            <div class="menu-item-img"></div>
-                            <h3>Yogurt Parfait</h3>
-                            <p>Layers of yogurt and granola</p>
-                        </div>
-                        <div class="menu-item" id="oatmeal">
-                            <div class="menu-item-img"></div>
-                            <h3>Oatmeal</h3>
-                            <p>Warm and hearty</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2 class="category-title">Seasonal Specials</h2>
-                    <div class="menu-grid">
-                        <div class="menu-item" id="pumpkin-spice-latte">
-                            <div class="menu-item-img"></div>
-                            <h3>Pumpkin Spice Latte</h3>
-                            <p>Autumn favorite with spices</p>
-                        </div>
-                        <div class="menu-item" id="peppermint-mocha">
-                            <div class="menu-item-img"></div>
-                            <h3>Peppermint Mocha</h3>
-                            <p>Chocolate and mint delight</p>
-                        </div>
-                        <div class="menu-item" id="gingerbread-cookie">
-                            <div class="menu-item-img"></div>
-                            <h3>Gingerbread Cookie</h3>
-                            <p>Spiced cookie treat</p>
-                        </div>
-                        <div class="menu-item" id="eggnog-latte">
-                            <div class="menu-item-img"></div>
-                            <h3>Eggnog Latte</h3>
-                            <p>Holiday classic with eggnog</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Coffee -->
+    <section>
+      <h3>Coffee</h3>
+      <div class="grid">
+        <div class="item" id="latte" data-id="latte">
+          <div class="img"></div>
+          <div class="row"><strong>Latte</strong><span class="price">₹220</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
         </div>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="../home/home.html">Home</a>
-            <a href="../About/about.html">About</a>
-            <a href="../contact/contact.html">Contact</a>
+        <div class="item" id="espresso" data-id="espresso">
+          <div class="img"></div>
+          <div class="row"><strong>Espresso</strong><span class="price">₹180</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
         </div>
-        <div class="footer-copyright">
-            &copy; 2025 Maison du Café. All rights reserved.
+        <div class="item" id="cappuccino" data-id="cappuccino">
+          <div class="img"></div>
+          <div class="row"><strong>Cappuccino</strong><span class="price">₹210</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
         </div>
-    </footer>
+        <div class="item" id="iced-coffee" data-id="iced-coffee">
+          <div class="img"></div>
+          <div class="row"><strong>Iced Coffee</strong><span class="price">₹200</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="americano" data-id="americano">
+          <div class="img"></div>
+          <div class="row"><strong>Americano</strong><span class="price">₹190</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="mocha" data-id="mocha">
+          <div class="img"></div>
+          <div class="row"><strong>Mocha</strong><span class="price">₹230</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="cold-brew" data-id="cold-brew">
+          <div class="img"></div>
+          <div class="row"><strong>Cold Brew</strong><span class="price">₹240</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tea -->
+    <section>
+      <h3>Tea</h3>
+      <div class="grid">
+        <div class="item" id="green-tea" data-id="green-tea">
+          <div class="img"></div>
+          <div class="row"><strong>Green Tea</strong><span class="price">₹150</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="black-tea" data-id="black-tea">
+          <div class="img"></div>
+          <div class="row"><strong>Black Tea</strong><span class="price">₹150</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="herbal-tea" data-id="herbal-tea">
+          <div class="img"></div>
+          <div class="row"><strong>Herbal Tea</strong><span class="price">₹160</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="chai-latte" data-id="chai-latte">
+          <div class="img"></div>
+          <div class="row"><strong>Chai Latte</strong><span class="price">₹180</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="masala-chai" data-id="masala-chai">
+          <div class="img"></div>
+          <div class="row"><strong>Masala Chai</strong><span class="price">₹170</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="iced-tea" data-id="iced-tea">
+          <div class="img"></div>
+          <div class="row"><strong>Iced Tea</strong><span class="price">₹170</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pastries -->
+    <section>
+      <h3>Pastries</h3>
+      <div class="grid">
+        <div class="item" id="croissant" data-id="croissant">
+          <div class="img"></div>
+          <div class="row"><strong>Croissant</strong><span class="price">₹130</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="muffin" data-id="muffin">
+          <div class="img"></div>
+          <div class="row"><strong>Muffin</strong><span class="price">₹120</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="scone" data-id="scone">
+          <div class="img"></div>
+          <div class="row"><strong>Scone</strong><span class="price">₹110</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="danish-pastry" data-id="danish-pastry">
+          <div class="img"></div>
+          <div class="row"><strong>Danish Pastry</strong><span class="price">₹140</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="banana-bread" data-id="banana-bread">
+          <div class="img"></div>
+          <div class="row"><strong>Banana Bread</strong><span class="price">₹120</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="chocolate-eclair" data-id="chocolate-eclair">
+          <div class="img"></div>
+          <div class="row"><strong>Chocolate Éclair</strong><span class="price">₹150</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breakfast -->
+    <section>
+      <h3>Breakfast</h3>
+      <div class="grid">
+        <div class="item" id="avocado-toast" data-id="avocado-toast">
+          <div class="img"></div>
+          <div class="row"><strong>Avocado Toast</strong><span class="price">₹260</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="breakfast-sandwich" data-id="breakfast-sandwich">
+          <div class="img"></div>
+          <div class="row"><strong>Breakfast Sandwich</strong><span class="price">₹240</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="yogurt-parfait" data-id="yogurt-parfait">
+          <div class="img"></div>
+          <div class="row"><strong>Yogurt Parfait</strong><span class="price">₹220</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="oatmeal" data-id="oatmeal">
+          <div class="img"></div>
+          <div class="row"><strong>Oatmeal</strong><span class="price">₹200</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal Specials -->
+    <section>
+      <h3>Seasonal Specials</h3>
+      <div class="grid">
+        <div class="item" id="pumpkin-spice-latte" data-id="pumpkin-spice-latte">
+          <div class="img"></div>
+          <div class="row"><strong>Pumpkin Spice Latte</strong><span class="price">₹250</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="peppermint-mocha" data-id="peppermint-mocha">
+          <div class="img"></div>
+          <div class="row"><strong>Peppermint Mocha</strong><span class="price">₹260</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="gingerbread-cookie" data-id="gingerbread-cookie">
+          <div class="img"></div>
+          <div class="row"><strong>Gingerbread Cookie</strong><span class="price">₹90</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+        <div class="item" id="eggnog-latte" data-id="eggnog-latte">
+          <div class="img"></div>
+          <div class="row"><strong>Eggnog Latte</strong><span class="price">₹270</span></div>
+          <div class="qty"><button class="qbtn" data-step="-1">−</button><input class="qin" type="number" min="0" value="0"/><button class="qbtn" data-step="1">+</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom popup cart -->
+  <div id="cartBar" class="cart">
+    <div class="cart-left">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081985.png" alt="cart" width="24" height="24">
+      <span id="cartSummary"><strong>0</strong> items • <strong>₹0</strong></span>
+    </div>
+    <div class="cart-right">
+      <button id="cartClear" class="clear">Clear</button>
+      <button class="pay">Proceed to Pay</button>
+    </div>
+  </div>
+
+  <footer class="foot">© 2025 Maison du Café</footer>
+
+  <script src="menu.js"></script>
 </body>
 </html>
