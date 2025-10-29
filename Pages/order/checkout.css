@@ -269,3 +269,27 @@ footer {
     font-size: 12px;
     color: #bbbbbb;
 }
+
+.container.thank-you-message {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 600px; 
+}
+
+.container.thank-you-message h1 {
+  margin-bottom: 20px;
+}
+
+.container.thank-you-message p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+
+.container.thank-you-message .order-btn {
+  display: inline-block; /* Make it respect margin-auto */
+  width: auto; /* Allow it to size to its content */
+  padding: 0 24px; /* Give it some horizontal padding */
+  text-decoration: none;
+}
