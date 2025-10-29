@@ -22,14 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCart();
   });
 
-  document.addEventListener('input', function (e) {
-    if (!e.target.classList.contains('qin')) return;
-    let v = parseInt(e.target.value, 10) || 0;
-    if (v < 0) v = 0;
-    e.target.value = v;
-    updateCart();
-  });
-
   const clearBtn = document.getElementById('cartClear');
   if (clearBtn) {
     clearBtn.addEventListener('click', function () {
