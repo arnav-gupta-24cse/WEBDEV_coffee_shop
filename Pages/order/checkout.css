@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
 }
 
-/* Header Styles */
+
 .header {
     display: flex;
     flex-direction: row;
@@ -97,7 +97,7 @@ body {
     white-space: nowrap;
 }
 
-/* Page Content Styles */
+
 .container {
     max-width: 960px;
     margin: 0 auto;

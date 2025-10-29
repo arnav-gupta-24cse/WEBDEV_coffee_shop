@@ -1,6 +1,6 @@
-/* Pages/cart/cart.css */
 
-/* Basic body and container setup (can be adjusted if you have a shared base) */
+
+
 body {
     font-family: 'Newsreader', serif;
     background: #FFFFFF;
@@ -18,13 +18,13 @@ main {
 }
 
 .container {
-    max-width: 960px; /* Consistent content width */
+    max-width: 960px;
     margin: 0 auto;
     padding: 40px 20px;
     width: 100%;
 }
 
-h1 { /* Assuming menu-title is used for page titles */
+h1 {
     font-weight: 800;
     font-size: clamp(32px, 5vw, 40px);
     line-height: 1.2;
@@ -33,7 +33,7 @@ h1 { /* Assuming menu-title is used for page titles */
     color: #171412;
 }
 
-/* Header Styles (Copied from shared-styles for consistency) */
+
 .header {
     display: flex;
     flex-direction: row;
@@ -76,7 +76,7 @@ h1 { /* Assuming menu-title is used for page titles */
     align-items: center;
     gap: 20px;
     flex-grow: 1;
-    justify-content: flex-end; /* Align nav items to the right */
+    justify-content: flex-end;
     min-width: 200px;
 }
 
@@ -115,16 +115,16 @@ h1 { /* Assuming menu-title is used for page titles */
 .order-btn:hover { background: #d6720f; }
 
 
-/* --- CART PAGE SPECIFIC STYLES --- */
+
 .cart-container {
     border: 1px solid #eee;
     padding: 30px;
     border-radius: 8px;
-    background-color: #f9f9f9; /* Light background for cart area */
-    margin-top: 20px; /* Space below title */
+    background-color: #f9f9f9;
+    margin-top: 20px;
 }
 
-#cart-items-container p { /* Style for empty cart message */
+#cart-items-container p {
     text-align: center;
     font-size: 18px;
     color: #888;
@@ -136,16 +136,16 @@ h1 { /* Assuming menu-title is used for page titles */
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #ddd; /* Slightly darker border */
+    border-bottom: 1px solid #ddd;
 }
 .cart-item:last-child {
-    border-bottom: none; /* No border for last item */
+    border-bottom: none;
 }
 
 .cart-item-details {
     display: flex;
     flex-direction: column;
-    gap: 4px; /* Space between name and price */
+    gap: 4px;
 }
 
 .cart-item-name {
@@ -161,12 +161,12 @@ h1 { /* Assuming menu-title is used for page titles */
 
 .cart-item-remove {
     background: none;
-    border: 1px solid #cc0000; /* Border instead of underline */
+    border: 1px solid #cc0000;
     color: #cc0000;
-    font-size: 13px; /* Smaller text */
+    font-size: 13px;
     font-family: 'Newsreader', serif;
     cursor: pointer;
-    padding: 5px 10px; /* Add padding */
+    padding: 5px 10px;
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -176,45 +176,45 @@ h1 { /* Assuming menu-title is used for page titles */
 }
 
 .cart-summary {
-    padding-top: 30px; /* More space above summary */
+    padding-top: 30px;
     max-width: 400px;
-    margin-left: auto; /* Align summary right */
-    margin-right: 0; /* Align summary right */
+    margin-left: auto;
+    margin-right: 0;
 }
 
-.order-summary { /* Reusing class name for consistency */
+.order-summary {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0; /* Adjust vertical padding */
+    padding: 8px 0;
     font-size: 16px;
     color: #333;
 }
 .order-summary span:last-child,
 .order-summary strong:last-child {
-    font-weight: 500; /* Slightly bolder price/total */
+    font-weight: 500;
 }
 
 .order-summary.total-row {
     font-size: 1.2rem;
     font-weight: 700;
     color: #171412;
-    border-top: 1px solid #171412; /* Bolder top border */
+    border-top: 1px solid #171412;
     padding-top: 15px;
-    margin-top: 10px; /* Space above total */
+    margin-top: 10px;
 }
 
-.form-footer { /* General footer alignment */
+.form-footer {
    text-align: right;
    margin-top: 30px;
 }
 
-.cart-checkout-footer { /* Specific styling/spacing for cart checkout */
+.cart-checkout-footer {
     border-top: 1px solid #eee;
     padding-top: 30px;
     margin-top: 30px;
 }
 
-/* Footer Styles (Copied from shared-styles for consistency) */
+
 footer {
     background-color: #2c2c2c;
     color: #ffffff;
@@ -240,7 +240,7 @@ footer {
     color: #bbbbbb;
 }
 
-/* Responsive Adjustments (Simplified) */
+
 @media (max-width: 768px) {
     .header { padding: 10px 15px; flex-direction: column; height: auto; gap: 10px; }
     .nav-section { flex-direction: column; gap: 15px; align-items: center; width: 100%; height: auto; }
@@ -256,5 +256,5 @@ footer {
 @media (max-width: 480px) {
     .cart-container { padding: 20px; }
     .order-summary span:first-child,
-    .order-summary strong:first-child { max-width: 60%; } /* Prevent long names pushing price off */
+    .order-summary strong:first-child { max-width: 60%; }
 }

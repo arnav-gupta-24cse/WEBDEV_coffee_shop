@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
 }
 
-/* Header Styles */
+
 .header {
     display: flex;
     flex-direction: row;
@@ -33,7 +33,7 @@ body {
     gap: 12px;
     min-width: 200px;
     height: auto;
-    text-decoration: none; /* Ensure link has no underline */
+    text-decoration: none;
 }
 
 .logo-icon {
@@ -124,7 +124,7 @@ body {
 }
 
 
-/* ===== STYLES FOR PAGE CONTENT ===== */
+
 
 .container {
     max-width: 960px;
@@ -232,7 +232,7 @@ section {
 }
 
 
-/* ===== STYLES FOR ORDER & RESERVE PAGES ===== */
+
 
 .order-tabs {
     border-bottom: 1px solid #eee;

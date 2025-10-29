@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserve a Table - Maison du Café</title>
-    <!-- Link to its own CSS file -->
+
     <link rel="stylesheet" href="reserve.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 <body>
 
     <header class="header">
-         <!-- Make sure paths are correct relative to reserve.html -->
+
         <a href="../home/home.html" class="logo-section">
             <div class="logo-icon">
                 <img src="../../Assets/coffee-mug.png" alt="Maison du Café logo">
@@ -37,7 +37,7 @@
             <nav class="navigation">
                 <a href="../menu/menu.html" class="nav-link">Menu</a>
                 <a href="../About/about.html" class="nav-link">About</a>
-                <a href="reserve.html" class="nav-link">Locations</a> <!-- Assuming reserve doubles as locations -->
+                <a href="reserve.html" class="nav-link">Locations</a>
                 <a href="../contact/contact.html" class="nav-link">Contact</a>
                 <a href="../Gallery/gallery.html" class="nav-link">Gallery</a>
                 <a href="../cart/cart.html" class="nav-link">Cart</a>
@@ -50,11 +50,11 @@
         <h1>Reserve a Table</h1>
 
         <div class="order-tabs">
-            <a href="../order/order.html" class="tab-link">Order Online</a> <!-- Link to order page -->
+            <a href="../order/order.html" class="tab-link">Order Online</a>
             <a href="reserve.html" class="tab-link active">Reserve Table</a>
         </div>
 
-        <!-- Add an ID to the form for easier selection in JS -->
+
         <form id="reservationForm" action="#" method="POST" class="reservation-form">
             <div class="form-group">
                 <label for="guests-select">Select Number of guests</label>
@@ -87,7 +87,7 @@
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required> <!-- Added required -->
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
 
             <div class="form-group">
@@ -95,9 +95,9 @@
                 <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
             </div>
 
-            <img src="../../Assets/location.jpeg" alt="Map showing location of Maison du Café" class="map-image"> <!-- Corrected Path -->
+            <img src="../../Assets/location.jpeg" alt="Map showing location of Maison du Café" class="map-image">
             
-            <!-- Confirmation Message Area -->
+
             <div id="confirmation-message"></div>
 
             <div class="form-footer">
@@ -107,7 +107,7 @@
     </main>
     <footer>
         <div class="footer-links">
-             <!-- Corrected Paths -->
+
             <a href="../home/home.html">Home</a>
             <a href="../About/about.html">About</a>
             <a href="../contact/contact.html">Contact</a>
@@ -117,7 +117,7 @@
         </div>
     </footer>
 
-    <!-- Embedded JavaScript for Reservation Form -->
+
    <script>
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('reservationForm');
