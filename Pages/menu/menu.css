@@ -1,6 +1,15 @@
-/* Base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: system-ui, Arial, sans-serif; color: #222; background: #fff; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    color: #222;
+    background: #fff;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -106,134 +115,335 @@ body { font-family: system-ui, Arial, sans-serif; color: #222; background: #fff;
 .order-btn:hover {
     background: #d6720f;
 }
-main { padding: 16px; }
-h2 { margin: 12px 0 6px; font-size: 24px; }
-.sub { color:#666; margin-bottom: 10px; font-size: 14px; }
-h3 { margin: 16px 0 10px; font-size: 18px; }
 
-/* Grid */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+main {
+    padding: 16px;
+}
 
-/* Cards (smaller & warm) */
+h2 {
+    margin: 12px 0 6px;
+    font-size: 24px;
+}
+
+.sub {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+h3 {
+    margin: 16px 0 10px;
+    font-size: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
 .item {
-  position: relative;
-  border: 1px solid #ed8012;
-  border-radius: 10px;
-  padding: 10px;
-  background: #fff8f2;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-  z-index: 1; /* ensure card sits above grid background */
+    position: relative;
+    border: 1px solid #ed8012;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff8f2;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    z-index: 1;
 }
 
 .item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background: #fff3e0;
-  z-index: 100; /* bring card and its dropdown to the top */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #fff3e0;
+    z-index: 100;
 }
 
-/* Hover dropdown (JSON description) */
 .item .drop {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  top: 100%;
-  margin-top: 6px;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 9999; /* keep it above all items */
-  font-size: 13px;
-  color: #4a2b09;
-  line-height: 1.4;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 100%;
+    margin-top: 6px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 9999;
+    font-size: 13px;
+    color: #4a2b09;
+    line-height: 1.4;
 }
 
 .item:hover .drop {
-  display: block;
+    display: block;
 }
 
 
-.img { height: 110px; border-radius: 8px; background: #f4f4f4 center/cover no-repeat; margin-bottom: 8px; }
+.img {
+    height: 110px;
+    border-radius: 8px;
+    background: #f4f4f4 center/cover no-repeat;
+    margin-bottom: 8px;
+}
 
-.row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.row strong { font-size: 15px; font-weight: 600; color: #4a2b09; }
-.price { font-size: 13px; background:#fff1d6; border:1px solid #f0d39a; padding: 2px 6px; border-radius:999px; font-weight:500; color:#3b220a; }
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
 
-/* Quantity controls (compact) */
-.qty { display: inline-flex; gap: 6px; align-items: center; }
-.qbtn { width: 28px; height: 28px; border:1px solid #ddd; background:#fff; border-radius:8px; cursor:pointer; font-size:16px; }
-.qin  { width: 46px; height: 28px; text-align:center; border:1px solid #ddd; border-radius:8px; font-size:14px; -moz-appearance: textfield; }
-.qin::-webkit-outer-spin-button, .qin::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.row strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4a2b09;
+}
 
-/* Hover dropdown (JSON) */
+.price {
+    font-size: 13px;
+    background: #fff1d6;
+    border: 1px solid #f0d39a;
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-weight: 500;
+    color: #3b220a;
+}
+
+.qty {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.qbtn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.qin {
+    width: 46px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    -moz-appearance: textfield;
+}
+
+.qin::-webkit-outer-spin-button,
+.qin::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .item .drop {
-  position: absolute; left: 10px; right: 10px; top: 100%; margin-top: 6px;
-  background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:10px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.12); display: none; z-index: 50;
-  font-size: 13px; color:#4a2b09; line-height: 1.4;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 100%;
+    margin-top: 6px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+    display: none;
+    z-index: 50;
+    font-size: 13px;
+    color: #4a2b09;
+    line-height: 1.4;
 }
-.item:hover .drop { display: block; }
 
-/* Bottom Popup Cart */
+.item:hover .drop {
+    display: block;
+}
+
 .cart {
-  position: fixed; bottom: 16px; left: 50%;
-  transform: translateX(-50%) translateY(120%);
-  width: 92%; max-width: 650px;
-  background: linear-gradient(135deg, #ff914d, #ed8012);
-  color: #fff; border-radius: 14px; padding: 12px 16px;
-  display: flex; justify-content: space-between; align-items: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
-  transition: transform .3s ease, opacity .3s ease; opacity: 0;
-  z-index: 1000; font-size: 14px;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    width: 92%;
+    max-width: 650px;
+    background: linear-gradient(135deg, #ff914d, #ed8012);
+    color: #fff;
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+    transition: transform .3s ease, opacity .3s ease;
+    opacity: 0;
+    z-index: 1000;
+    font-size: 14px;
 }
-.cart--show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-.cart-left { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-.cart-right { display: flex; gap: 8px; }
-.cart .clear, .cart .pay {
-  background: #fff; color:#111; border: none; border-radius: 8px;
-  padding: 8px 12px; cursor: pointer; font-weight: 700;
-  transition: background .2s ease, transform .2s ease;
+.cart--show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
 }
-.cart .clear { color:#ed8012; font-weight: 600; }
-.cart .clear:hover { background:#ffe6c7; transform: translateY(-2px); }
-.cart .pay:hover { background:#f7f7f7; transform: translateY(-2px); }
 
-/* Footer */
-.foot { text-align:center; padding: 18px; border-top:1px solid #eee; margin-top: 28px; color:#666; font-size: 13px; }
+.cart-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
 
-/* Item images (swap if you prefer) */
-#latte .img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
-#espresso .img { background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d'); }
-#cappuccino .img { background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a'); }
-#iced-coffee .img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
-#americano .img { background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd'); }
-#mocha .img { background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca'); }
-#cold-brew .img { background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574'); }
+.cart-right {
+    display: flex;
+    gap: 8px;
+}
 
-#green-tea .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
-#black-tea .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
-#herbal-tea .img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
-#chai-latte .img { background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3'); }
-#masala-chai .img { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'); }
-#iced-tea .img { background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f'); }
+.cart .clear,
+.cart .pay {
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background .2s ease, transform .2s ease;
+}
 
-#croissant .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
-#muffin .img { background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d'); }
-#scone .img { background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f'); }
-#danish-pastry .img { background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35'); }
-#banana-bread .img { background-image: url('https://images.unsplash.com/photo-1609766857041-1f7b4f9a7df6'); }
-#chocolate-eclair .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
+.cart .clear {
+    color: #ed8012;
+    font-weight: 600;
+}
 
-#avocado-toast .img { background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141'); }
-#breakfast-sandwich .img { background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349'); }
-#yogurt-parfait .img { background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141'); }
-#oatmeal .img { background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60'); }
+.cart .clear:hover {
+    background: #ffe6c7;
+    transform: translateY(-2px);
+}
 
-#pumpkin-spice-latte .img { background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0'); }
-#peppermint-mocha .img { background-image: url('https://images.unsplash.com/photo-1517705008128-361805f42e86'); }
-#gingerbread-cookie .img { background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55'); }
-#eggnog-latte .img { background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0'); }
+.cart .pay:hover {
+    background: #f7f7f7;
+    transform: translateY(-2px);
+}
+
+.foot {
+    text-align: center;
+    padding: 18px;
+    border-top: 1px solid #eee;
+    margin-top: 28px;
+    color: #666;
+    font-size: 13px;
+}
+
+#latte .img {
+    background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca');
+}
+
+#espresso .img {
+    background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d');
+}
+
+#cappuccino .img {
+    background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a');
+}
+
+#iced-coffee .img {
+    background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574');
+}
+
+#americano .img {
+    background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd');
+}
+
+#mocha .img {
+    background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca');
+}
+
+#cold-brew .img {
+    background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574');
+}
+
+#green-tea .img {
+    background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad');
+}
+
+#black-tea .img {
+    background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad');
+}
+
+#herbal-tea .img {
+    background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f');
+}
+
+#chai-latte .img {
+    background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3');
+}
+
+#masala-chai .img {
+    background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad');
+}
+
+#iced-tea .img {
+    background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f');
+}
+
+#croissant .img {
+    background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55');
+}
+
+#muffin .img {
+    background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d');
+}
+
+#scone .img {
+    background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f');
+}
+
+#danish-pastry .img {
+    background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35');
+}
+
+#banana-bread .img {
+    background-image: url('https://images.unsplash.com/photo-1609766857041-1f7b4f9a7df6');
+}
+
+#chocolate-eclair .img {
+    background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55');
+}
+
+#avocado-toast .img {
+    background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141');
+}
+
+#breakfast-sandwich .img {
+    background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349');
+}
+
+#yogurt-parfait .img {
+    background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141');
+}
+
+#oatmeal .img {
+    background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60');
+}
+
+#pumpkin-spice-latte .img {
+    background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0');
+}
+
+#peppermint-mocha .img {
+    background-image: url('https://images.unsplash.com/photo-1517705008128-361805f42e86');
+}
+
+#gingerbread-cookie .img {
+    background-image: url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55');
+}
+
+#eggnog-latte .img {
+    background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0');
+}
