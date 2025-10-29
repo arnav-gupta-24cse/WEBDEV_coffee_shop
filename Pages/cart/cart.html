@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Maison du Café</title>
+     <!-- Link to SHARED CSS file -->
+    <link rel="stylesheet" href="/Pages/cart/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+         <!-- Corrected Path -->
+        <a href="../home/home.html" class="logo-section">
+            <div class="logo-icon">
+                 <!-- Corrected Path -->
+                <img src="../../Assets/coffee-mug.png" alt="Coffee Mug Logo">
+            </div>
+            <h1 class="logo-text">Maison du Café</h1>
+        </a>
+        <div class="nav-section">
+            <nav class="navigation">
+                 <!-- Corrected Paths -->
+                <a href="../home/home.html" class="nav-link">Home</a>
+                <a href="../menu/menu.html" class="nav-link">Menu</a>
+                <a href="../About/about.html" class="nav-link">About</a>
+                <a href="../order/reserve.html" class="nav-link">Locations</a>
+                <a href="../Gallery/gallery.html" class="nav-link">Gallery</a>
+                <a href="../contact/contact.html" class="nav-link">Contact</a>
+                <a href="cart.html" class="nav-link">Cart</a> <!-- Current Page -->
+            </nav>
+             <!-- Corrected Path -->
+             <a href="../menu/menu.html" class="order-btn">Add Items</a>
+        </div>
+    </header>
+
+    <main class="container"> <!-- Use container for consistent padding -->
+        <h1 class="menu-title">Your Cart</h1>
+        
+        <div class="cart-container">
+            <div id="cart-items-container">
+                <!-- Cart items will be dynamically inserted here -->
+                <p>Loading your cart...</p> 
+            </div>
+
+            <div class="cart-summary">
+                <div class="order-summary">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₹0.00</span>
+                </div>
+                <div class="order-summary">
+                    <span>Tax (5%)</span>
+                    <span id="cart-tax">₹0.00</span>
+                </div>
+                <div class="order-summary total-row">
+                    <strong>Total</strong>
+                    <strong id="cart-total">₹0.00</strong>
+                </div>
+            </div>
+
+            <div class="form-footer cart-checkout-footer">
+                 <!-- Link to a future checkout page or the reservation page -->
+                 <!-- Corrected Path -->
+                <a href="../order/reserve.html" class="order-btn">Proceed to Checkout</a> 
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+             <!-- Corrected Paths -->
+            <a href="../home/home.html">Home</a>
+            <a href="../About/about.html">About</a>
+            <a href="../contact/contact.html">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 Maison du Café. All rights reserved.
+        </div>
+    </footer>
+    
+    <!-- Corrected Path to shared script -->
+    <script src="../../Scripts/cart.js"></script> 
+</body>
+</html>
