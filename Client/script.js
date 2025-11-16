@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     initNavbar();
@@ -453,3 +454,65 @@ function initAnimations() {
         observer.observe(el);
     });
 }
+// Menu Page Script
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuGrid = document.querySelector(".menu-grid");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    let allMenuItems = []; // To store all fetched items
+
+    // 1. Fetch menu items from JSON
+    fetch('menu.json')
+        .then(response => response.json())
+        .then(data => {
+            allMenuItems = data; // Store all items
+            displayMenuItems(allMenuItems); // Display all items initially
+        })
+        .catch(error => console.error('Error fetching menu data:', error));
+
+    
+    function displayMenuItems(items) {
+        
+        menuGrid.innerHTML = "";
+
+        // Create a card for each item
+        const menuHTML = items.map(item => {
+            return `
+                <div class="menu-card" data-category="${item.category}">
+                    <img src="${item.img}" alt="${item.title}" class="card-image">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-title">${item.title}</h3>
+                            <span class="item-price">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <p class="item-description">${item.desc}</p>
+                        <button class="add-to-cart-btn">
+                            <i class='bx bx-cart-add'></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+        }).join(""); 
+
+        menuGrid.innerHTML = menuHTML;
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+
+            
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            
+            if (filter === "all") {
+                displayMenuItems(allMenuItems);
+            } else {
+                const filteredItems = allMenuItems.filter(item => item.category === filter);
+                displayMenuItems(filteredItems);
+            }
+        });
+    });
+});
