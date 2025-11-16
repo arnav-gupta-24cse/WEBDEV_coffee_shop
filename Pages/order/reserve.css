@@ -232,14 +232,6 @@ section {
 }
 
 
-
-
-.order-tabs {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
 .tab-link {
     display: inline-block;
     padding: 10px 20px;

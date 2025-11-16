@@ -37,7 +37,6 @@
             <nav class="navigation">
                 <a href="../menu/menu.html" class="nav-link">Menu</a>
                 <a href="../About/about.html" class="nav-link">About</a>
-                <a href="../order/reserve.html" class="nav-link">Reserve</a>
                 <a href="../contact/contact.html" class="nav-link">Contact</a>
                 <a href="../Gallery/gallery.html" class="nav-link">Gallery</a>
                 <a href="../cart/cart.html" class="nav-link">Cart</a>
@@ -48,11 +47,6 @@
 
     <main class="container">
         <h1>Reserve a Table</h1>
-
-        <div class="order-tabs">
-            <a href="../order/order.html" class="tab-link">Order Online</a>
-            <a href="reserve.html" class="tab-link active">Reserve Table</a>
-        </div>
 
 
         <form id="reservationForm" action="#" method="POST" class="reservation-form">
@@ -123,10 +117,8 @@
         const form = document.getElementById('reservationForm');
         const confirmationMessageEl = document.getElementById('confirmation-message');
         
-        // !!! PASTE YOUR WEB APP URL FROM GOOGLE APPS SCRIPT HERE !!!
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMO51w7403ymuo6egDTAWLcKAmmLwFSpWERxLaQ2xSsZZbsrL6h2OB_k3hAQ8cklwPqQ/exec"; 
 
-        // --- (Your cart functions remain unchanged) ---
         function getCart() {
             const cartData = JSON.parse(localStorage.getItem('cafeCart')) || [];
             return cartData.map(item => ({ ...item, price: parseFloat(item.price) }));
@@ -152,34 +144,29 @@
                 console.error("Error updating cart link:", error);
             }
         }
-        // --- End of cart count functions ---
 
 
         form.addEventListener('submit', function(event) {
-            // 1. Prevent the default form submission
+            
             event.preventDefault(); 
             
-            // 2. Show a 'sending' message
             confirmationMessageEl.textContent = 'Submitting reservation...';
             confirmationMessageEl.style.display = 'block';
             confirmationMessageEl.style.backgroundColor = '#fefde2'; // Yellowish
             confirmationMessageEl.style.color = '#666';
 
-            // 3. Create a FormData object from the form
             const formData = new FormData(form);
 
-            // 4. Send the data to your Google Script URL using fetch()
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json()) // Parse the JSON response from the script
+            .then(response => response.json())
             .then(data => {
-                console.log("Response from script:", data); // For debugging
+                console.log("Response from script:", data);
                 
                 if (data.result === 'success') {
-                    // 5. Display the SUCCESS confirmation message
-                    const guests = formData.get('guests'); // Get values for the message
+                    const guests = formData.get('guests');
                     const time = formData.get('time');
                     const email = formData.get('email');
                     
@@ -187,14 +174,12 @@
                     confirmationMessageEl.style.backgroundColor = '#dff0d8';
                     confirmationMessageEl.style.color = '#3c763d';
                     
-                    form.reset(); // Clear the form
+                    form.reset();
                 } else {
-                    // 5b. Display an ERROR message
                     throw new Error(data.message || 'Unknown error occurred');
                 }
             })
             .catch(error => {
-                // 5c. Handle network or script errors
                 console.error('Error submitting form:', error);
                 confirmationMessageEl.textContent = 'Oops! Something went wrong. Please try again. ' + error.message;
                 confirmationMessageEl.style.backgroundColor = '#f2dede'; // Error color
@@ -202,7 +187,6 @@
             });
         });
 
-        // Update cart count in header on page load
         updateCartLink();
     });
     </script>

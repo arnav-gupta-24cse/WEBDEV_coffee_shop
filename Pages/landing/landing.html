@@ -10,23 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Basic CSS Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Use the Inter font */
         body, html {
             font-family: 'Inter', sans-serif;
             background-color: #111;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
         }
 
-        /* Main container for the scene */
         #scene-container {
             position: relative;
             width: 100vw;
@@ -38,7 +35,6 @@
             background-color: #000;
         }
 
-        /* The main image */
         #coffee-shop-image {
             max-width: 100%;
             max-height: 100%;
@@ -46,7 +42,6 @@
             border-radius: 8px;
         }
 
-        /* The dark overlay with the NEW flashlight effect */
         #dark-overlay {
             position: absolute;
             top: 0;
@@ -56,8 +51,6 @@
             cursor: pointer;
             transition: opacity 0.7s ease-in-out;
             z-index: 10;
-            
-            /* "Torch" Effect */
             background: radial-gradient(
                 circle at var(--x, 50%) var(--y, 50%),
                 transparent 100px,
@@ -65,55 +58,46 @@
             );
         }
 
-        /* A message inside the flashlight */
         #overlay-message {
             position: absolute;
-            top: calc(var(--y, 50%) + 130px); /* Position below the circle */
+            top: calc(var(--y, 50%) + 130px);
             left: var(--x, 50%);
             transform: translateX(-50%);
             color: white;
             font-size: 1.1rem;
             font-weight: 500;
             text-align: center;
-            pointer-events: none; /* Allows clicks to go through to the overlay */
+            pointer-events: none;
             background-color: rgba(0,0,0,0.5);
             padding: 4px 12px;
             border-radius: 6px;
         }
 
-        /* When lights-on is added, the overlay fades out */
         #scene-container.lights-on #dark-overlay {
             opacity: 0;
-            pointer-events: none; /* Disable clicking after fade */
+            pointer-events: none;
         }
         
         #scene-container.lights-on #overlay-message {
             display: none;
         }
 
-        /* Hotspot for the coffee machine */
         #coffee-machine-hotspot {
             position: absolute;
-            /* Approximate coordinates for the blue machine */
-            /* These are percentages, so they are responsive */
             top: 35%;
             left: 70%;
             width: 8%;
             height: 30%;
             cursor: pointer;
             z-index: 5;
-            display: none; /* Hidden by default */
+            display: none;
         }
 
-        /* Show the hotspot only when lights are on */
         #scene-container.lights-on #coffee-machine-hotspot {
             display: block;
         }
 
-        /* REMOVED: All styles for #brewing-animation, .coffee-cup, 
-           .coffee-liquid, and @keyframes fillCup are gone. */
 
-        /* NEW: Styles for the coffee fill screen */
         #coffee-fill-screen {
             position: absolute;
             bottom: 0;
@@ -122,14 +106,10 @@
             height: 0; /* Starts at 0% height */
             background-color: #6f4e37; /* Coffee color */
             z-index: 15;
-            /* This transition will animate the height change */
             transition: height 3.5s ease-in; 
-            /* NEW: Added for waves and bubbles */
             overflow: hidden;
-            /* REMOVED: "position: relative;" which was causing the bug */
         }
 
-        /* NEW: Wave effect using pseudo-elements */
         #coffee-fill-screen::before,
         #coffee-fill-screen::after {
             content: '';
@@ -144,7 +124,6 @@
             animation: wave-sway 3s ease-in-out infinite alternate;
         }
 
-        /* Second wave with different timing */
         #coffee-fill-screen::after {
             top: -30px;
             opacity: 0.3;
@@ -152,7 +131,6 @@
             animation-delay: -1.5s; /* Offset animation */
         }
 
-        /* NEW: Animation for the waves */
         @keyframes wave-sway {
             from {
                 transform: translateX(-3%);
@@ -162,7 +140,6 @@
             }
         }
 
-        /* NEW: Bubble container */
         #bubbles-container {
             position: absolute;
             top: 0;
@@ -172,19 +149,17 @@
             z-index: 2;
         }
 
-        /* NEW: Style for individual bubbles */
         .bubble {
             position: absolute;
             bottom: -50px; /* Start off-screen */
             left: var(--x, 50%);
             width: var(--size, 10px);
             height: var(--size, 10px);
-            background-color: rgba(244, 233, 220, 0.2); /* Foam color */
+            background-color: rgba(244, 233, 220, 0.2);
             border-radius: 50%;
             animation: rise var(--duration, 3s) linear var(--delay, 0s) infinite;
         }
 
-        /* NEW: Animation for bubbles rising */
         @keyframes rise {
             0% {
                 transform: translateY(0);
@@ -192,11 +167,11 @@
             }
             100% {
                 transform: translateY(-100vh); /* Rise full screen height */
+                transform: translateY(-100vh);
                 opacity: 0;
             }
         }
 
-        /* When .brewing is added, change height to 100% */
         #scene-container.brewing #coffee-fill-screen {
             height: 100%;
         }
@@ -235,16 +210,13 @@
     </div>
 
     <script>
-        // Wait for the document to be fully loaded
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Get references to all the key elements
             const scene = document.getElementById('scene-container');
             const overlay = document.getElementById('dark-overlay');
             const message = document.getElementById('overlay-message');
             const hotspot = document.getElementById('coffee-machine-hotspot');
             
-            // --- 1. Flashlight Effect ---
             function updateFlashlight(e) {
                 const x = e.clientX;
                 const y = e.clientY;
@@ -255,31 +227,26 @@
             }
             document.addEventListener('mousemove', updateFlashlight);
 
-            // --- 2. "Turn on Lights" Action ---
             function turnOnLights() {
                 scene.classList.add('lights-on');
                 document.removeEventListener('mousemove', updateFlashlight);
             }
             overlay.addEventListener('click', turnOnLights);
 
-            // --- 3. Coffee Machine Click Action ---
             function startBrewing() {
                 scene.classList.add('brewing');
                 hotspot.style.display = 'none';
 
-                // --- NEW: Generate Bubbles ---
                 const bubblesContainer = document.getElementById('bubbles-container');
                 for (let i = 0; i < 30; i++) {
                     const bubble = document.createElement('span');
                     bubble.className = 'bubble';
                     
-                    // Randomize properties for each bubble
                     const size = Math.random() * 20 + 5; // 5px to 25px
                     const x = Math.random() * 100;       // 0% to 100%
                     const duration = Math.random() * 3 + 2; // 2s to 5s
                     const delay = Math.random() * 3;     // 0s to 3s delay
 
-                    // Set CSS Custom Properties for the animation
                     bubble.style.setProperty('--size', `${size}px`);
                     bubble.style.setProperty('--x', `${x}%`);
                     bubble.style.setProperty('--duration', `${duration}s`);
@@ -288,14 +255,10 @@
                     bubblesContainer.appendChild(bubble);
                 }
 
-                // --- 4. Wait for Animation to Finish ---
-                // The new animation is 3.5 seconds long
                 setTimeout(() => {
-                    // *** THIS IS THE CHANGED PART ***
-                    // Redirect to the home.html page
                     window.location.href = '../home/home.html';
                     
-                }, 3700); // 3.7 seconds, just after animation finishes
+                }, 3700);
             }
             // Add the click listener to the coffee machine hotspot
             hotspot.addEventListener('click', startBrewing);
