@@ -1,0 +1,68 @@
+<button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+
+<script>
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    let isVisible = false;
+    let ticking = false;
+
+    const show = () => {
+        if (!isVisible) {
+            scrollBtn.classList.add('visible');
+            isVisible = true;
+        }
+    };
+
+    const hide = () => {
+        if (isVisible) {
+            scrollBtn.classList.remove('visible');
+            isVisible = false;
+        }
+    };
+
+    const handleScroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (scrollTop > 300) {
+                    show();
+                } else {
+                    hide();
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+
+    const scrollToTop = () => {
+        const start = window.pageYOffset;
+        const startTime = performance.now();
+        const duration = 600;
+
+        const easeInOutCubic = (t) => {
+            return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        };
+
+        const animateScroll = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easing = easeInOutCubic(progress);
+            
+            window.scrollTo(0, start * (1 - easing));
+
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll);
+            }
+        };
+
+        requestAnimationFrame(animateScroll);
+    };
+
+    scrollBtn.addEventListener('click', scrollToTop);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+</script>
