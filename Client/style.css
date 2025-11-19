@@ -1281,6 +1281,54 @@ body {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), 0 5px 12px rgba(0, 0, 0, 0.1);
 }
 
+.delete-feedback-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+    z-index: 10;
+}
+
+.feedback-note:hover .delete-feedback-btn {
+    opacity: 1;
+}
+
+.delete-feedback-btn:hover {
+    background: #ff4444;
+    transform: scale(1.1);
+}
+
+.delete-feedback-btn svg {
+    width: 18px;
+    height: 18px;
+    color: #666;
+}
+
+.delete-feedback-btn:hover svg {
+    color: white;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
 .note-yellow {
     background-color: #fef68a;
 }

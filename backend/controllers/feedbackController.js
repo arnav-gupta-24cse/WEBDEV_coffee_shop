@@ -68,8 +68,36 @@ const getFeedbackByRating = async (req, res) => {
   }
 };
 
+// Delete feedback
+const deleteFeedback = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const feedback = await Feedback.findByIdAndDelete(id);
+
+    if (!feedback) {
+      return res.status(404).json({
+        success: false,
+        message: 'Feedback not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: 'Feedback deleted successfully'
+    });
+  } catch (error) {
+    console.error('Delete feedback error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to delete feedback',
+      error: error.message
+    });
+  }
+};
+
 module.exports = {
   createFeedback,
   getAllFeedback,
-  getFeedbackByRating
+  getFeedbackByRating,
+  deleteFeedback
 };

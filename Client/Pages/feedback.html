@@ -83,45 +83,7 @@
         <section class="feedback-wall-section">
             <h2 class="wall-title">Customer Feedback Wall</h2>
             <div class="feedback-wall" id="feedbackWall">
-                <!-- Sample feedback notes -->
-                <div class="feedback-note note-yellow">
-                    <div class="note-header">
-                        <span class="note-name">Sarah M.</span>
-                        <svg class="note-rating" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                        </svg>
-                    </div>
-                    <p class="note-message">Best coffee in town! The atmosphere is so cozy and welcoming.</p>
-                </div>
-
-                <div class="feedback-note note-blue">
-                    <div class="note-header">
-                        <span class="note-name">James K.</span>
-                        <svg class="note-rating" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                        </svg>
-                    </div>
-                    <p class="note-message">Love the pastries here. Fresh every morning and absolutely delicious!</p>
-                </div>
-
-                <div class="feedback-note note-pink">
-                    <div class="note-header">
-                        <span class="note-name">Emily R.</span>
-                        <svg class="note-rating" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                        </svg>
-                    </div>
-                    <p class="note-message">Great place to work remotely. Fast wifi and comfortable seating.</p>
-                </div>
+                <!-- Feedback will be loaded from MongoDB -->
             </div>
         </section>
     </main>
@@ -318,7 +280,16 @@
 
             const feedbackNote = document.createElement('div');
             feedbackNote.className = `feedback-note ${randomColor}`;
+            feedbackNote.setAttribute('data-id', data._id);
             feedbackNote.innerHTML = `
+                <button class="delete-feedback-btn" onclick="deleteFeedback('${data._id}')" title="Delete feedback">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                </button>
                 <div class="note-header">
                     <span class="note-name">${data.name}</span>
                     <svg class="note-rating" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -334,6 +305,35 @@
             feedbackWall.insertBefore(feedbackNote, feedbackWall.firstChild);
         }
 
+        // Delete feedback
+        async function deleteFeedback(feedbackId) {
+            if (!confirm('Are you sure you want to delete this feedback?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5001/api/feedback/${feedbackId}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Remove from DOM
+                    const feedbackNote = document.querySelector(`[data-id="${feedbackId}"]`);
+                    if (feedbackNote) {
+                        feedbackNote.style.animation = 'fadeOut 0.3s ease-out';
+                        setTimeout(() => feedbackNote.remove(), 300);
+                    }
+                } else {
+                    alert('Failed to delete feedback.');
+                }
+            } catch (error) {
+                console.error('Delete feedback error:', error);
+                alert('An error occurred while deleting feedback.');
+            }
+        }
+
         // Load feedbacks on page load
         async function loadFeedbacks() {
             try {
@@ -341,10 +341,11 @@
                 const result = await response.json();
                 
                 if (result.success && result.feedbacks.length > 0) {
-                    // Clear sample feedbacks
+                    // Clear any existing content
                     const feedbackWall = document.getElementById('feedbackWall');
+                    feedbackWall.innerHTML = '';
                     
-                    result.feedbacks.slice(0, 10).forEach(feedback => {
+                    result.feedbacks.forEach(feedback => {
                         addFeedbackToWall(feedback);
                     });
                 }
@@ -354,7 +355,7 @@
         }
 
         // Load feedbacks when page loads
-        // loadFeedbacks(); // Uncomment to auto-load feedbacks
+        window.addEventListener('DOMContentLoaded', loadFeedbacks);
     </script>
 </body>
 </html>
