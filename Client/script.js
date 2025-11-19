@@ -20,7 +20,7 @@ function initNavbar() {
         navbar.innerHTML = `
             <nav class="navbar">
                 <div class="navbar-container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="/Client/index.html" class="navbar-brand">
                         <svg class="navbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                             <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
@@ -38,14 +38,15 @@ function initNavbar() {
                     </button>
 
                     <div class="navbar-menu" id="navbarMenu">
-                        <a href="Pages/home.html" class="navbar-link">Home</a>
-                        <a href="Pages/menu.html" class="navbar-link">Menu</a>
-                        <a href="Pages/reservations.html" class="navbar-link">Reservations</a>
-                        <a href="Pages/about.html" class="navbar-link">About</a>
-                        <a href="Pages/feedback.html" class="navbar-link">Feedback</a>
+                        <a href="/Client/index.html" class="navbar-link">Home</a>
+                        <a href="/Client/Pages/menu.html" class="navbar-link">Menu</a>
+                        <a href="/Client/Pages/reservations.html" class="navbar-link">Reservations</a>
+                        <a href="/Client/Pages/about.html" class="navbar-link">About</a>
+                        <a href="/Client/Pages/feedback.html" class="navbar-link">Feedback</a>
+                        <a href="/Client/Pages/contact.html" class="navbar-link">Contact</a>
                     </div>
 
-                    <a href="Pages/cart.html" class="navbar-cart">
+                    <a href="/Client/Pages/cart.html" class="navbar-cart">
                         <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
@@ -85,10 +86,10 @@ function loadHomePage() {
                 <h1 class="hero-title">Brewing Warmth & Great Coffee in Your Neighborhood</h1>
                 <p class="hero-description">Once just a dream, now a vibrant community hub — <strong>Brew Haven</strong> is your neighborhood café bringing people together through <strong>community</strong>, <strong>quality</strong>, and <strong>exceptional coffee</strong>.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="window.location.href='Pages/menu.html'">Order Ahead</button>
-                    <button class="btn btn-secondary" onclick="window.location.href='Pages/about.html'">Learn More</button>
+                    <button class="btn btn-primary" onclick="window.location.href='/Client/Pages/menu.html'">Order Ahead</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='/Client/Pages/about.html'">Learn More</button>
                 </div>
-                <p class="hero-hours">Open Daily 7am – 8pm</p>
+                <p class="hero-hours">Open Daily 7am - 8pm</p>
             </div>
         </section>
 
@@ -189,7 +190,7 @@ function loadHomePage() {
                 </div>
             </div>
             
-            <button class="btn btn-brown btn-center" onclick="window.location.href='Pages/menu.html'">Start a Pickup Order</button>
+            <button class="btn btn-brown btn-center" onclick="window.location.href='/Client/Pages/menu.html'">Start a Pickup Order</button>
         </section>
 
         <section class="story-section">
@@ -198,7 +199,7 @@ function loadHomePage() {
                 <h2>Crafted with Passion, Served with Heart</h2>
                 <p>Every cup at Brew Haven is more than just coffee—it's an experience. Our skilled baristas take pride in creating the perfect brew, from expertly pulled espressos to beautifully crafted latte art.</p>
                 <p>We believe that great coffee brings people together. That's why we source only the finest beans, roasted to perfection, and prepare each drink with meticulous care.</p>
-                <button class="btn btn-outline" onclick="window.location.href='Pages/about.html'">Our Story</button>
+                <button class="btn btn-outline" onclick="window.location.href='/Client/Pages/about.html'">Our Story</button>
             </div>
         </section>
 
@@ -207,7 +208,7 @@ function loadHomePage() {
                 <h2>A Space to Connect & Unwind</h2>
                 <p>Step into Brew Haven and feel right at home. Our warm, inviting atmosphere is perfect for catching up with friends, diving into a good book, or getting work done in a cozy environment.</p>
                 <p>With comfortable seating, free WiFi, and the aroma of freshly brewed coffee filling the air, it's the ideal spot for any occasion.</p>
-                <button class="btn btn-primary" onclick="window.location.href='Pages/reservations.html'">Reserve a Table</button>
+                <button class="btn btn-primary" onclick="window.location.href='/Client/Pages/reservations.html'">Reserve a Table</button>
             </div>
             <img src="assets/cafe-ambiance.jpg" alt="Cafe Interior" class="location-image">
         </section>
@@ -219,7 +220,7 @@ function loadHomePage() {
                 <p>Take a piece of Brew Haven home with you. Every 12oz bag of our signature roast fuels more than your morning—it powers quality, passion, and community.</p>
                 <p class="product-detail">12 oz bag • 17-21 Servings</p>
                 <p class="product-price">$14</p>
-                <button class="btn btn-primary" onclick="window.location.href='Pages/menu.html'">Order Today</button>
+                <button class="btn btn-primary" onclick="window.location.href='/Client/Pages/menu.html'">Order Today</button>
             </div>
         </section>
     `;
@@ -285,11 +286,12 @@ function initFooter() {
                     <div class="footer-section">
                         <h3 class="footer-heading">Quick Links</h3>
                         <ul class="footer-links">
-                            <li><a href="Pages/home.html">Home</a></li>
-                            <li><a href="Pages/menu.html">Menu</a></li>
-                            <li><a href="Pages/about.html">About Us</a></li>
-                            <li><a href="Pages/reservations.html">Reservations</a></li>
-                            <li><a href="Pages/feedback.html">Feedback</a></li>
+                            <li><a href="/Client/index.html">Home</a></li>
+                            <li><a href="/Client/Pages/menu.html">Menu</a></li>
+                            <li><a href="/Client/Pages/about.html">About Us</a></li>
+                            <li><a href="/Client/Pages/reservations.html">Reservations</a></li>
+                            <li><a href="/Client/Pages/feedback.html">Feedback</a></li>
+                            <li><a href="/Client/Pages/contact.html">Contact</a></li>
                         </ul>
                     </div>
 
@@ -355,17 +357,11 @@ function initFooter() {
 
 // Scroll to Top Component
 function initScrollToTop() {
-    const container = document.getElementById('scrollToTop');
-    if (!container) return;
+    // Check if button already exists in the page
+    let button = document.getElementById('scrollToTopBtn');
+    if (!button) return;
 
-    const button = document.createElement('button');
-    button.className = 'scroll-to-top-btn';
-    button.setAttribute('aria-label', 'Scroll to top');
-    button.innerHTML = `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    `;
+    // Button already exists in HTML, just add functionality
 
     let isVisible = false;
     let ticking = false;
@@ -426,7 +422,6 @@ function initScrollToTop() {
 
     button.addEventListener('click', scrollToTop);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    container.appendChild(button);
 }
 
 // Animation Observer
@@ -454,58 +449,63 @@ function initAnimations() {
         observer.observe(el);
     });
 }
-// Menu Page Script
-document.addEventListener("DOMContentLoaded", () => {
 
-    const menuGrid = document.querySelector(".menu-grid");
+// Menu Page Script - Initialize when menu grid is present
+function initMenuPage() {
+    const menuGrid = document.getElementById("menuGrid");
+    if (!menuGrid) return;
+
     const filterButtons = document.querySelectorAll(".filter-btn");
+    let allMenuItems = [];
 
-    let allMenuItems = []; // To store all fetched items
-
-    // 1. Fetch menu items from JSON
-    fetch('menu.json')
+    // Fetch menu items from JSON
+    fetch('/Client/menu.json')
         .then(response => response.json())
         .then(data => {
-            allMenuItems = data; // Store all items
-            displayMenuItems(allMenuItems); // Display all items initially
+            allMenuItems = data;
+            displayMenuItems(allMenuItems);
         })
-        .catch(error => console.error('Error fetching menu data:', error));
+        .catch(error => {
+            console.error('Error fetching menu data:', error);
+            menuGrid.innerHTML = '<p>Unable to load menu items. Please try again later.</p>';
+        });
 
-    
     function displayMenuItems(items) {
-        
         menuGrid.innerHTML = "";
 
-        // Create a card for each item
-        const menuHTML = items.map(item => {
-            return `
-                <div class="menu-card" data-category="${item.category}">
-                    <img src="${item.img}" alt="${item.title}" class="card-image">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-title">${item.title}</h3>
-                            <span class="item-price">$${item.price.toFixed(2)}</span>
-                        </div>
-                        <p class="item-description">${item.desc}</p>
-                        <button class="add-to-cart-btn">
-                            <i class='bx bx-cart-add'></i> Add to Cart
-                        </button>
+        if (items.length === 0) {
+            menuGrid.innerHTML = '<p>No items found in this category.</p>';
+            return;
+        }
+
+        items.forEach(item => {
+            const menuCard = document.createElement('div');
+            menuCard.className = 'menu-card';
+            menuCard.setAttribute('data-category', item.category);
+            menuCard.innerHTML = `
+                <img src="${item.img || '/Client/assets/placeholder.jpg'}" alt="${item.title}" class="card-image">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="item-title">${item.title}</h3>
+                        <span class="item-price">$${item.price.toFixed(2)}</span>
                     </div>
+                    <p class="item-description">${item.desc || 'Delicious and freshly made.'}</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('${item.title}', ${item.price}, '${item.category}')">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        Add to Cart
+                    </button>
                 </div>
             `;
-        }).join(""); 
-
-        menuGrid.innerHTML = menuHTML;
+            menuGrid.appendChild(menuCard);
+        });
     }
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
             const filter = button.getAttribute("data-filter");
-
             
             filterButtons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
-
             
             if (filter === "all") {
                 displayMenuItems(allMenuItems);
@@ -515,4 +515,173 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+}
+
+// Add to Cart Function with MongoDB Integration
+async function addToCart(name, price, category) {
+    const API_URL = 'http://localhost:5001/api/cart';
+    const USER_ID = 'guest-user'; // In production, use actual user ID from authentication
+    
+    try {
+        // Add to backend
+        const response = await fetch(`${API_URL}/${USER_ID}/items`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                price: price,
+                category: category,
+                quantity: 1
+            })
+        });
+        
+        if (response.ok) {
+            const cartData = await response.json();
+            
+            // Update localStorage for navbar badge
+            const localCart = cartData.items.map(item => ({
+                name: item.name,
+                price: item.price,
+                category: item.category,
+                quantity: item.quantity
+            }));
+            localStorage.setItem('cart', JSON.stringify(localCart));
+            
+            // Update cart badge
+            window.dispatchEvent(new Event('cartUpdated'));
+            
+            // Show success feedback
+            alert(`${name} added to cart!`);
+        } else {
+            throw new Error('Failed to add item to cart');
+        }
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        
+        // Fallback to localStorage only
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        
+        const existingItemIndex = cart.findIndex(item => item.name === name);
+        
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity++;
+        } else {
+            cart.push({
+                name: name,
+                price: price,
+                category: category,
+                quantity: 1
+            });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.dispatchEvent(new Event('cartUpdated'));
+        alert(`${name} added to cart!`);
+    }
+}
+
+// Initialize menu page on DOM ready if menu grid exists
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('menuGrid')) {
+        initMenuPage();
+    }
 });
+
+// Feedback Page Functionality
+function initFeedbackPage() {
+    const form = document.getElementById('feedbackForm');
+    const ratingButtons = document.querySelectorAll('.rating-btn');
+    const ratingInput = document.getElementById('rating');
+    const feedbackWall = document.getElementById('feedbackWall');
+
+    if (!form) return;
+
+    // Add random rotation to existing feedback notes on the wall
+    const existingNotes = document.querySelectorAll('.feedback-note');
+    existingNotes.forEach(note => {
+        const randomRotation = (Math.random() * 6 - 3).toFixed(2); // Random between -3 and 3 degrees
+        note.style.setProperty('--rotation', `${randomRotation}deg`);
+    });
+
+    // Handle rating button clicks
+    ratingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            ratingButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Set the rating value
+            ratingInput.value = this.getAttribute('data-rating');
+        });
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const rating = document.getElementById('rating').value;
+        const message = document.getElementById('message').value;
+
+        // Check if rating is selected
+        if (!rating) {
+            alert('Please select a rating for your experience!');
+            return;
+        }
+
+        // Create new feedback note
+        const noteColors = ['note-yellow', 'note-blue', 'note-pink', 'note-green'];
+        const randomColor = noteColors[Math.floor(Math.random() * noteColors.length)];
+
+        // Get rating icon based on rating value
+        let ratingIcon = '';
+        let ratingClass = '';
+        
+        if (rating === 'good') {
+            ratingClass = 'rating-good';
+            ratingIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>';
+        } else if (rating === 'neutral') {
+            ratingClass = 'rating-neutral';
+            ratingIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="15" x2="16" y2="15"></line><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>';
+        } else if (rating === 'bad') {
+            ratingClass = 'rating-bad';
+            ratingIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>';
+        }
+
+        // Create the note element with random rotation
+        const randomRotation = (Math.random() * 6 - 3).toFixed(2); // Random between -3 and 3 degrees
+        const noteHTML = `
+            <div class="feedback-note ${randomColor}" style="--rotation: ${randomRotation}deg">
+                <div class="note-header">
+                    <span class="note-name">${name}</span>
+                    <svg class="note-rating ${ratingClass}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        ${ratingIcon}
+                    </svg>
+                </div>
+                <p class="note-message">${message}</p>
+            </div>
+        `;
+
+        // Add note to the wall
+        feedbackWall.innerHTML = noteHTML + feedbackWall.innerHTML;
+
+        // Show success message
+        alert('Thank you for your feedback! Your note has been added to our wall.');
+
+        // Reset form
+        form.reset();
+        ratingButtons.forEach(btn => btn.classList.remove('active'));
+        ratingInput.value = '';
+    });
+}
+
+// Initialize feedback page when DOM is loaded
+if (document.querySelector('.feedback-page')) {
+    document.addEventListener('DOMContentLoaded', initFeedbackPage);
+}

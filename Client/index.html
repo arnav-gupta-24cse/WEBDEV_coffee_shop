@@ -351,7 +351,34 @@
 
     <script>
         $(document).ready(function() {
-            $('#navbar').load('components/navbar.html');
+            $('#navbar').load('components/navbar.html', function() {
+                // Initialize navbar after loading
+                const toggle = document.getElementById('navbarToggle');
+                const menu = document.getElementById('navbarMenu');
+                if (toggle && menu) {
+                    toggle.addEventListener('click', () => {
+                        menu.classList.toggle('active');
+                        toggle.classList.toggle('active');
+                    });
+                }
+
+                // Update cart badge
+                const updateCartBadge = () => {
+                    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                    const cartCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                    const badge = document.getElementById('cartBadge');
+                    if (badge) {
+                        if (cartCount > 0) {
+                            badge.textContent = cartCount;
+                            badge.style.display = 'flex';
+                        } else {
+                            badge.style.display = 'none';
+                        }
+                    }
+                };
+                updateCartBadge();
+                window.addEventListener('cartUpdated', updateCartBadge);
+            });
         });
     </script>
 </body>

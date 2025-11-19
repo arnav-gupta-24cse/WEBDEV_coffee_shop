@@ -937,9 +937,9 @@ body {
         width: 2.5rem;
         height: 2.5rem;
     }
+}
 
-
-}/* ========= GLOBAL STYLES ========= */
+/* ========= GLOBAL STYLES ========= */
 body {
   font-family: Arial, sans-serif;
   color: #333;
@@ -1068,5 +1068,872 @@ body {
   font-size: 1rem;
   color: #666;
   line-height: 1.4;
+}
 
+/* Feedback Page Styles */
+.feedback-page {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.feedback-hero {
+    background: #ffffff;
+    color: #2c2c2c;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.feedback-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.feedback-subtitle {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback-form-section {
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky-note {
+    background-color: #fef68a;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem 2rem;
+    border-radius: 3px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.sticky-note:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sticky-note-tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #2c2c2c;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b6f47;
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.rating-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.rating-btn {
+    background: none;
+    border: 3px solid transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-btn svg {
+    width: 40px;
+    height: 40px;
+}
+
+.rating-btn[data-rating="good"] {
+    color: #4caf50;
+}
+
+.rating-btn[data-rating="neutral"] {
+    color: #ff9800;
+}
+
+.rating-btn[data-rating="bad"] {
+    color: #f44336;
+}
+
+.rating-btn.active {
+    border-color: currentColor;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.rating-btn:hover {
+    transform: scale(1.15);
+}
+
+.submit-btn {
+    background-color: #c17d3a;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.submit-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #a0652e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-wall-section {
+    padding: 3rem 2rem 5rem;
+    background-color: white;
+}
+
+.wall-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 2.5rem;
+}
+
+.feedback-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feedback-note {
+    padding: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 3px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: rotate(var(--rotation, 0deg));
+}
+
+.feedback-note:hover {
+    transform: translateY(-8px) rotate(0deg);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.note-yellow {
+    background-color: #fef68a;
+}
+
+.note-blue {
+    background-color: #a8d8ff;
+}
+
+.note-pink {
+    background-color: #ffb3d9;
+}
+
+.note-green {
+    background-color: #b3ffb3;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.note-name {
+    font-weight: 700;
+    color: #2c2c2c;
+    font-size: 1.1rem;
+}
+
+.note-rating {
+    width: 30px;
+    height: 30px;
+}
+
+.note-rating.rating-good {
+    color: #4caf50;
+}
+
+.note-rating.rating-neutral {
+    color: #ff9800;
+}
+
+.note-rating.rating-bad {
+    color: #f44336;
+}
+
+.note-message {
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .feedback-title {
+        font-size: 2rem;
+    }
+
+    .feedback-subtitle {
+        font-size: 1rem;
+    }
+
+    .sticky-note {
+        padding: 2rem 1.5rem;
+    }
+
+    .rating-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .rating-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .feedback-wall {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .wall-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* ============================================
+   CART PAGE STYLES
+   ============================================ */
+.cart-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.cart-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 2rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-info h4 {
+    font-size: 1.2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.25rem;
+}
+
+.cart-item-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-item-quantity button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #ff7f50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.cart-item-quantity button:hover {
+    background: #ff6b35;
+}
+
+.cart-item-quantity span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cart-item-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+.cart-item-remove {
+    background: transparent;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.cart-item-remove:hover {
+    transform: scale(1.2);
+}
+
+.cart-summary {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.summary-row.total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff7f50;
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.empty-cart a {
+    color: #ff7f50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-cart a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+.contact-hero {
+    background: linear-gradient(135deg, #8b6f47 0%, #6d5635 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.contact-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card .material-symbols-outlined {
+    font-size: 3rem;
+    color: #ff7f50;
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.contact-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.contact-form-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff7f50;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================
+   RESERVATIONS PAGE STYLES
+   ============================================ */
+.reservation-hero {
+    background: linear-gradient(135deg, #8b6f47 0%, #6d5635 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.reservation-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.reservation-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.reservation-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.reservation-info {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.reservation-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+}
+
+.hours-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.hours-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #666;
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+.reservation-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fff3e0;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
+}
+
+.reservation-note .material-symbols-outlined {
+    color: #ff9800;
+    font-size: 1.5rem;
+}
+
+.reservation-note p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.reservation-form-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.reservation-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.reservation-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: #ff7f50;
+}
+
+.reservation-form textarea {
+    resize: vertical;
+}
+
+/* ============================================
+   MENU PAGE ENHANCEMENTS
+   ============================================ */
+.menu-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.menu-container h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.menu-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #8b6f47;
+    background: transparent;
+    color: #8b6f47;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #8b6f47;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #8b6f47;
+    color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-grid .menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.menu-grid .menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.menu-grid .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-grid .card-content {
+    padding: 1.5rem;
+}
+
+.menu-grid .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.menu-grid .item-title {
+    font-size: 1.4rem;
+    color: #2c2c2c;
+}
+
+.menu-grid .item-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff7f50;
+}
+
+.menu-grid .item-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.add-to-cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: #ff6b35;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 127, 80, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 968px) {
+    .contact-content,
+    .reservation-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cart-item-quantity {
+        justify-content: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero h1,
+    .reservation-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contact-hero p,
+    .reservation-hero p {
+        font-size: 1rem;
+    }
+
+    .reservation-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-container h2 {
+        font-size: 2.2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
 }

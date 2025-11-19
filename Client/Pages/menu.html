@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew Haven - Menu</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
-    
+    <!-- Navbar Component -->
+    <div id="navbar"></div>
 
     <main>
         <section class="menu-container" id="menu">
@@ -24,13 +24,21 @@
                 <button class="filter-btn" data-filter="food">Food</button>
             </div>
 
-            <div class="menu-grid">
-                </div>
-
+            <div class="menu-grid" id="menuGrid">
+            </div>
         </section>
     </main>
 
-    <script src="script.js" defer></script>
+    <!-- Footer Component -->
+    <div id="footer"></div>
 
+    <!-- Scroll to Top Component -->
+    <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="../script.js"></script>
 </body>
 </html>
