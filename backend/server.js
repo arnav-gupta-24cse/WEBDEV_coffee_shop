@@ -13,15 +13,14 @@ const reservationRoutes = require('./routes/reservations');
 const feedbackRoutes = require('./routes/feedback');
 const viewRoutes = require('./routes/views');
 
-// Load environment variables
+
 dotenv.config();
 
-// Connect to database
 connectDB();
 
 const app = express();
 
-// Handlebars Configuration
+
 app.engine('handlebars', engine({
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views/layouts'),
@@ -30,13 +29,10 @@ app.engine('handlebars', engine({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
 app.use('/', viewRoutes);
 
 app.use('/api/items', itemRoutes);
@@ -45,7 +41,6 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/feedback', feedbackRoutes);
 
-// Error Handling Middleware
 app.use(notFound);
 app.use(errorHandler);
 

@@ -4,7 +4,7 @@
         "title": "Espresso",
         "category": "coffee",
         "price": 3.39,
-        "img": "/Client/assets/coffee-1.jpg",
+        "img": "/Client/assets/1 espresso.jpg",
         "desc": "Rich and bold single shot espresso."
     },
     {
@@ -20,7 +20,7 @@
         "title": "Latte",
         "category": "coffee",
         "price": 4.75,
-        "img": "/Client/assets/coffee-1.jpg",
+        "img": "/Client/assets/3 latte.jpg",
         "desc": "Smooth espresso with steamed milk."
     },
     {
@@ -28,7 +28,7 @@
         "title": "Americano",
         "category": "coffee",
         "price": 3.75,
-        "img": "/Client/assets/coffee-1.jpg",
+        "img": "/Client/assets/4 americano.jpg",
         "desc": "Espresso with hot water."
     },
     {
@@ -36,7 +36,7 @@
         "title": "Mocha",
         "category": "coffee",
         "price": 5.25,
-        "img": "/Client/assets/coffee-1.jpg",
+        "img": "/Client/assets/5 mocha.jpg",
         "desc": "Espresso with chocolate and steamed milk."
     },
     {
@@ -44,7 +44,7 @@
         "title": "Cold Brew",
         "category": "coffee",
         "price": 4.25,
-        "img": "/Client/assets/coffee-1.jpg",
+        "img": "/Client/assets/6 cold brew.jpg",
         "desc": "Smooth, refreshing cold coffee."
     },
     {
@@ -52,7 +52,7 @@
         "title": "Croissant",
         "category": "pastries",
         "price": 3.25,
-        "img": "/Client/assets/pastry-1.jpg",
+        "img": "/Client/assets/7 croissant.jpg",
         "desc": "Buttery, flaky French pastry."
     },
     {
@@ -60,7 +60,7 @@
         "title": "Chocolate Muffin",
         "category": "pastries",
         "price": 3.75,
-        "img": "/Client/assets/pastry-1.jpg",
+        "img": "/Client/assets/8 chocolate muffin.jpg",
         "desc": "Rich chocolate chip muffin."
     },
     {
@@ -68,7 +68,7 @@
         "title": "Blueberry Scone",
         "category": "pastries",
         "price": 3.90,
-        "img": "/Client/assets/pastry-1.jpg",
+        "img": "/Client/assets/9 blueberry scone.jpg",
         "desc": "Fluffy scone with glaze."
     },
     {
@@ -76,7 +76,7 @@
         "title": "Cinnamon Roll",
         "category": "pastries",
         "price": 4.25,
-        "img": "/Client/assets/pastry-1.jpg",
+        "img": "/Client/assets/10 cinnamon roll.jpg",
         "desc": "Warm roll with cream cheese frosting."
     },
     {
@@ -84,7 +84,7 @@
         "title": "Breakfast Sandwich",
         "category": "food",
         "price": 6.50,
-        "img": "/Client/assets/food-1.jpg",
+        "img": "/Client/assets/11 sandwich.jpg",
         "desc": "Egg, cheese, and bacon on brioche."
     },
     {
@@ -92,7 +92,7 @@
         "title": "Avocado Toast",
         "category": "food",
         "price": 7.25,
-        "img": "/Client/assets/food-1.jpg",
+        "img": "/Client/assets/12 avocado toast.jpg",
         "desc": "Smashed avocado on sourdough."
     }
 ]

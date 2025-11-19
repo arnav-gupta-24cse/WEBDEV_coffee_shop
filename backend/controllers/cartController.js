@@ -1,10 +1,7 @@
-// Cart Controller - Full CRUD Operations
 const Cart = require('../models/Cart');
 const Item = require('../models/Item');
 
-// @desc    Get user's cart
-// @route   GET /api/cart/:userId
-// @access  Public
+
 const getCart = async (req, res) => {
     try {
         const { userId } = req.params;
@@ -29,15 +26,12 @@ const getCart = async (req, res) => {
     }
 };
 
-// @desc    Add item to cart
-// @route   POST /api/cart/:userId/items
-// @access  Public
+
 const addItemToCart = async (req, res) => {
     try {
         const { userId } = req.params;
         const { name, price, category, quantity, itemId, image } = req.body;
         
-        // Validate required fields
         if (!name || !price) {
             return res.status(400).json({ message: 'Name and price are required' });
         }
@@ -121,9 +115,6 @@ const updateCartItem = async (req, res) => {
     }
 };
 
-// @desc    Remove item from cart
-// @route   DELETE /api/cart/:userId/items/:itemIndex
-// @access  Public
 const removeItemFromCart = async (req, res) => {
     try {
         const { userId, itemIndex } = req.params;
@@ -138,13 +129,10 @@ const removeItemFromCart = async (req, res) => {
             return res.status(404).json({ message: 'Item not found in cart' });
         }
         
-        // Remove item
         cart.items.splice(itemIndex, 1);
         
-        // Calculate totals
         cart.calculateTotals();
         
-        // Save cart
         await cart.save();
         
         res.json(cart);
@@ -153,9 +141,6 @@ const removeItemFromCart = async (req, res) => {
     }
 };
 
-// @desc    Clear entire cart
-// @route   DELETE /api/cart/:userId
-// @access  Public
 const clearCart = async (req, res) => {
     try {
         const { userId } = req.params;
@@ -178,9 +163,6 @@ const clearCart = async (req, res) => {
     }
 };
 
-// @desc    Sync cart from localStorage
-// @route   POST /api/cart/:userId/sync
-// @access  Public
 const syncCart = async (req, res) => {
     try {
         const { userId } = req.params;
